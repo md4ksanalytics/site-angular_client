@@ -16,6 +16,7 @@ ng build --configuration local --output-hashing none
 
 npm install -g http-serve
 http-server -c-1 .
+angular cli
 
 #npm i angular-oauth2-oidc --save --legacy-peer-deps
 
