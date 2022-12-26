@@ -41,10 +41,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   // Private
   private _unsubscribeAll: Subject<any>;
-
+  //angular project
   /**
    * Constructor
-   *
+   * test
    * @param {DOCUMENT} document
    * @param {Title} _title
    * @param {Renderer2} _renderer
