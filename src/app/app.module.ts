@@ -23,7 +23,8 @@ import {ServiceWorkerModule, SwRegistrationOptions} from '@angular/service-worke
 import { environment } from '../environments/environment';
 import { HomeComponent } from './main/logs/home.component'; 
 import { JwtAuthInterceptor } from './auth/helpers';
- 
+import {FormsModule} from '@angular/forms';
+
 
 const appRoutes: Routes = [
   {
@@ -51,6 +52,7 @@ const appRoutes: Routes = [
       scrollPositionRestoration: 'enabled', // Add options right here
       relativeLinkResolution: 'legacy',
       useHash: false
+      
     }),
     TranslateModule.forRoot(),
 
@@ -71,10 +73,9 @@ const appRoutes: Routes = [
     // App modules
     LayoutModule, 
     // ServiceWorkerModule.register('ngsw-worker.js' ),
+    
   ],
-  // providers: [
-  //   JwtAuthInterceptor
-  // ],
+   providers: [JwtAuthInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

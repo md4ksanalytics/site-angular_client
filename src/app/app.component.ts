@@ -27,7 +27,8 @@ import { locale as menuGerman } from "app/menu/i18n/de";
 import { locale as menuPortuguese } from "app/menu/i18n/pt";
 import { AuthenticationService } from "./auth/service/authentication.service";
 import { environment } from "environments/environment";
-import { ToastrModule } from 'ngx-toastr';
+//import { ToastrModule } from 'ngx-toastr';
+
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -41,10 +42,17 @@ export class AppComponent implements OnInit, OnDestroy {
 //angular project
   // Private
   private _unsubscribeAll: Subject<any>;
-
+  //angular project
   /**
+   * 
+   * 
    * Constructor
+   *testing
+   * testing
+<<<<<<< HEAD
+=======
    *
+>>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
    * @param {DOCUMENT} document
    * @param {Title} _title
    * @param {Renderer2} _renderer
