@@ -26,6 +26,7 @@ import { JwtAuthInterceptor } from './auth/helpers';
 import {FormsModule} from '@angular/forms';
 <<<<<<< HEAD
 import { ModulsComponent } from './main/admin/moduls/moduls.component';
+import { RolePermissionComponent } from './main/admin/role-permission/role-permission.component';
 =======
 import { ModuleOprationComponent } from './module-opration/module-opration.component';
 >>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
@@ -49,7 +50,7 @@ const appRoutes: Routes = [
 
 @NgModule({
 <<<<<<< HEAD
-  declarations: [AppComponent, ModulsComponent],
+  declarations: [AppComponent, ModulsComponent, RolePermissionComponent],
 =======
   declarations: [AppComponent, ModuleOprationComponent],
 >>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
