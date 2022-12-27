@@ -24,6 +24,7 @@ import { environment } from '../environments/environment';
 import { HomeComponent } from './main/logs/home.component'; 
 import { JwtAuthInterceptor } from './auth/helpers';
 import {FormsModule} from '@angular/forms';
+import { ModuleOprationComponent } from './module-opration/module-opration.component';
 
 
 const appRoutes: Routes = [
@@ -43,7 +44,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ModuleOprationComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
