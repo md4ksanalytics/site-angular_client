@@ -44,6 +44,7 @@ export class AppComponent implements OnInit, OnDestroy {
   //angular project
   /**
    * Constructor
+   * testing
    *
    * @param {DOCUMENT} document
    * @param {Title} _title
