@@ -90,11 +90,7 @@
     "@angularclass/hmr": "3.0.0",
     "@types/jasmine": "3.6.3",
     "@types/node": "12.11.1",
-<<<<<<< HEAD
     "codelyzer": "^0.0.28",
-=======
-    "codelyzer": "^6.0.2",
->>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
     "jasmine-core": "3.7.0",
     "karma": "^6.4.1",
     "karma-chrome-launcher": "3.1.0",

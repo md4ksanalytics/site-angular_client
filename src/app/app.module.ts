@@ -24,11 +24,8 @@ import { environment } from '../environments/environment';
 import { HomeComponent } from './main/logs/home.component'; 
 import { JwtAuthInterceptor } from './auth/helpers';
 import {FormsModule} from '@angular/forms';
-<<<<<<< HEAD
+import { ModuleOprationComponent } from './main/admin/module-opration/module-opration.component';
 import { ModulsComponent } from './main/admin/moduls/moduls.component';
-=======
-import { ModuleOprationComponent } from './module-opration/module-opration.component';
->>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
 
 
 const appRoutes: Routes = [
@@ -48,11 +45,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-<<<<<<< HEAD
   declarations: [AppComponent, ModulsComponent],
-=======
-  declarations: [AppComponent, ModuleOprationComponent],
->>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
