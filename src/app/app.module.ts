@@ -36,6 +36,7 @@ import { RolePermissionComponent } from './main/admin/role-permission/role-permi
 
 import { LovComponent } from './main/admin/lov/lov.component';
 import { RoleComponent } from './main/Admin/role/role.component';
+import { AdminRoutingModule } from './main/Admin/admin-routing.module';
 
 
 
@@ -52,7 +53,7 @@ const appRoutes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/logs-monitoring/pages/miscellaneous/error' //Error 404 - Page not found
+    redirectTo: '/pages/miscellaneous/error' //Error 404 - Page not found
   }
 ];
 
@@ -92,6 +93,7 @@ const appRoutes: Routes = [
     }),
     // App modules
     LayoutModule, 
+    AdminRoutingModule,
     // ServiceWorkerModule.register('ngsw-worker.js' ),
     
   ],
