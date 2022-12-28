@@ -39,6 +39,7 @@ import { RoleComponent } from './main/Admin/role/role.component';
 
 
 
+
 const appRoutes: Routes = [
   {
     path: 'pages',
