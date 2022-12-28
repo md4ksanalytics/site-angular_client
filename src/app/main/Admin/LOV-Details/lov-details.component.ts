@@ -10,7 +10,6 @@ export class LOVDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("lov")
   }
 
 }

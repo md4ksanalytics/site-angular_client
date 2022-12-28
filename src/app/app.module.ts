@@ -24,17 +24,21 @@ import { environment } from '../environments/environment';
 import { HomeComponent } from './main/logs/home.component'; 
 import { JwtAuthInterceptor } from './auth/helpers';
 import {FormsModule} from '@angular/forms';
+import { ModuleOprationComponent } from './main/admin/module-opration/module-opration.component';
+import { DemoComponent } from './main/admin/organization/demo/demo.component';
+import { Demo1Component } from './main/admin/organization/demo1/demo1.component';
 
-import { ModuleOprationComponent } from './main/Admin/module-opration/module-opration.component';
+
 import { LOVDetailsComponent } from './main/admin/lov-details/lov-details.component';
 
-import { ModulsComponent } from './main/admin/moduls/moduls.component';
+
 
 
 
 import { RolePermissionComponent } from './main/admin/role-permission/role-permission.component';
 
 import { LovComponent } from './main/admin/lov/lov.component';
+import { ModulsComponent } from './main/admin/moduls/moduls.component';
 import { RoleComponent } from './main/Admin/role/role.component';
 import { AdminRoutingModule } from './main/Admin/admin-routing.module';
 
@@ -58,6 +62,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
+
  
 
 

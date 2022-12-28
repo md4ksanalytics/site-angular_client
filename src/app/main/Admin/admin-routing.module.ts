@@ -1,19 +1,14 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { LOVDetailsComponent } from './lov-details/lov-details.component';
+import { RouterModule, Routes } from '@angular/router';
+import { DemoComponent } from './organization/demo/demo.component';
 
-const routes = [
-  {
-    path:'admin/lov/dtl', Component:LOVDetailsComponent
-  }
+
+const routes: Routes = [
+  {path: 'demo', component:DemoComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes),
-    FormsModule
-  ],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-
 export class AdminRoutingModule { }
