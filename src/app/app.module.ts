@@ -27,8 +27,20 @@ import {FormsModule} from '@angular/forms';
 import { ModuleOprationComponent } from './main/admin/module-opration/module-opration.component';
 import { DemoComponent } from './main/admin/organization/demo/demo.component';
 import { Demo1Component } from './main/admin/organization/demo1/demo1.component';
+
+
+import { LOVDetailsComponent } from './main/admin/lov-details/lov-details.component';
+
+
+
+
+
+import { RolePermissionComponent } from './main/admin/role-permission/role-permission.component';
+
 import { LovComponent } from './main/admin/lov/lov.component';
 import { ModulsComponent } from './main/admin/moduls/moduls.component';
+import { RoleComponent } from './main/Admin/role/role.component';
+
 
 
 const appRoutes: Routes = [
@@ -48,7 +60,14 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ModuleOprationComponent, DemoComponent, Demo1Component, LovComponent, ModulsComponent],
+
+ 
+
+
+  declarations: [AppComponent, ModulsComponent, LovComponent,LOVDetailsComponent, RoleComponent,ModuleOprationComponent,RolePermissionComponent],
+
+ 
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
