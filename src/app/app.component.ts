@@ -49,10 +49,7 @@ export class AppComponent implements OnInit, OnDestroy {
    * Constructor
    *testing
    * testing
-<<<<<<< HEAD
-=======
    *
->>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
    * @param {DOCUMENT} document
    * @param {Title} _title
    * @param {Renderer2} _renderer

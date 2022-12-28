@@ -24,28 +24,19 @@ import { environment } from '../environments/environment';
 import { HomeComponent } from './main/logs/home.component'; 
 import { JwtAuthInterceptor } from './auth/helpers';
 import {FormsModule} from '@angular/forms';
-<<<<<<< HEAD
+
 import { ModuleOprationComponent } from './main/Admin/module-opration/module-opration.component';
 import { LOVDetailsComponent } from './main/admin/lov-details/lov-details.component';
-=======
-import { ModuleOprationComponent } from './main/admin/module-opration/module-opration.component';
+
 import { ModulsComponent } from './main/admin/moduls/moduls.component';
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
+
+
 import { RolePermissionComponent } from './main/admin/role-permission/role-permission.component';
-=======
+
 import { LovComponent } from './main/admin/lov/lov.component';
-<<<<<<< HEAD
-import { RoleComponent } from './main/admin/role/role.component';
-=======
->>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
->>>>>>> branch 'main' of http://github.com/md4ksanalytics/site-angular_client.git
-=======
-import { ModuleOprationComponent } from './module-opration/module-opration.component';
->>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
->>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
->>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
+import { RoleComponent } from './main/Admin/role/role.component';
+
 
 
 const appRoutes: Routes = [
@@ -65,27 +56,13 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-<<<<<<< HEAD
-  declarations: [AppComponent, ModuleOprationComponent, LOVDetailsComponent],
-=======
-<<<<<<< HEAD
-  declarations: [AppComponent, ModulsComponent],
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  declarations: [AppComponent, ModulsComponent, LovComponent, RoleComponent],
-=======
-<<<<<<< HEAD
-  declarations: [AppComponent, ModulsComponent, RolePermissionComponent],
-=======
-  declarations: [AppComponent, ModulsComponent, LovComponent],
->>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
->>>>>>> branch 'main' of http://github.com/md4ksanalytics/site-angular_client.git
-=======
-  declarations: [AppComponent, ModuleOprationComponent],
->>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
->>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
->>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
+ 
+
+
+  declarations: [AppComponent, ModulsComponent, LovComponent,LOVDetailsComponent, RoleComponent,ModuleOprationComponent,RolePermissionComponent],
+
+ 
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
