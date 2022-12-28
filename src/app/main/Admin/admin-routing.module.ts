@@ -5,7 +5,7 @@ import { LOVDetailsComponent } from './lov-details/lov-details.component';
 
 const routes = [
   {
-    path:'LOV-Details', Component:LOVDetailsComponent
+    path:'admin/lov/dtl', Component:LOVDetailsComponent
   }
 ];
 
