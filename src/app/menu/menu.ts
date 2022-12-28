@@ -20,5 +20,13 @@ export const menu: CoreMenu[] =
     url: "transactions",
   },
    
+  {
+    id: "lovdtl",
+    title: "LOV DETAILS",
+    translate: "MENU.Form",
+    type: "item",
+    icon: "trending-up",
+    url: "admin/lov/dtl",
+  },
   
 ];

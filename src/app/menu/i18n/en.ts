@@ -5,7 +5,7 @@ export const locale = {
   data: {
     MENU: {
       HOME: "Dashboard",
-      Form: "Form",
+      Form: "Form"
      
     },
   },
