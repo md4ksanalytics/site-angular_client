@@ -12,6 +12,6 @@ import { environment } from "environments/environment";
 })
 export class HomeComponent implements OnInit {
   ngOnInit(): void {
-  //  throw new Error("Method not implemented.");
+    throw new Error("Method not implemented.");
   }
 }
