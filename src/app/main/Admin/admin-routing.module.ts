@@ -15,4 +15,5 @@ const routes = [
   ],
   exports: [RouterModule]
 })
+
 export class AdminRoutingModule { }
