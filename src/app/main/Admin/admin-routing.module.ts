@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DemoComponent } from './organization/demo/demo.component';
+import { LOVDetailsComponent } from './LOV-Details/lov-details.component';
 
 
 const routes: Routes = [
-  {path: 'demo', component:DemoComponent}
+  {path:'admin/lov/dtl', component:LOVDetailsComponent}
 ];
 
 @NgModule({
