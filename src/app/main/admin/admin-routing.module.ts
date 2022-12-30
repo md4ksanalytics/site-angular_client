@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ModuleOprationComponent } from './module-opration/module-opration.component';
+import { LOVDetailsComponent } from './Lov/LOV-Details/lov-details.component';
+import { LovComponent } from './Lov/lov/lov.component';
 
 
 const routes: Routes = [
-  {path: 'module-opration', component:ModuleOprationComponent}
+  {path:'admin/lov', component:LovComponent},
+  {
+    path:'lov-details', component:LOVDetailsComponent
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule
-  ]
+  exports: [RouterModule]
 })
 export class AdminRoutingModule { }

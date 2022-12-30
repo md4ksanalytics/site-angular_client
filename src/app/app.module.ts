@@ -3,7 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
 import 'hammerjs';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
@@ -22,6 +25,7 @@ import {ServiceWorkerModule, SwRegistrationOptions} from '@angular/service-worke
 import { environment } from '../environments/environment';
 import { HomeComponent } from './main/logs/home.component'; 
 import { JwtAuthInterceptor } from './auth/helpers';
+<<<<<<< HEAD
 import {FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModuleOprationComponent } from './main/admin/module-opration/module-opration.component';
 import { DemoComponent } from './main/admin/organization/demo/demo.component';
@@ -45,6 +49,9 @@ import { Demo1Component } from './main/admin/organization/demo1/demo1.component'
 
 
 
+=======
+import { AdminRoutingModule } from './main/Admin/admin-routing.module';
+>>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
 const appRoutes: Routes = [
   {
     path: 'pages',
@@ -59,9 +66,11 @@ const appRoutes: Routes = [
     path: '**',
     redirectTo: '/pages/miscellaneous/error' //Error 404 - Page not found
   }
+
 ];
 
 @NgModule({
+<<<<<<< HEAD
 
  
 
@@ -70,6 +79,9 @@ const appRoutes: Routes = [
 
  
 
+=======
+  declarations: [AppComponent],
+>>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
