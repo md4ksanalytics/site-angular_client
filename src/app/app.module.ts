@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import 'hammerjs';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
@@ -23,24 +22,25 @@ import {ServiceWorkerModule, SwRegistrationOptions} from '@angular/service-worke
 import { environment } from '../environments/environment';
 import { HomeComponent } from './main/logs/home.component'; 
 import { JwtAuthInterceptor } from './auth/helpers';
-import {FormsModule} from '@angular/forms';
+import {FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModuleOprationComponent } from './main/admin/module-opration/module-opration.component';
 import { DemoComponent } from './main/admin/organization/demo/demo.component';
 import { Demo1Component } from './main/admin/organization/demo1/demo1.component';
 
 
-import { LOVDetailsComponent } from './main/admin/lov-details/lov-details.component';
+// import { LOVDetailsComponent } from './main/admin/lov-details/lov-details.component';
 
 
 
 
 
-import { RolePermissionComponent } from './main/admin/role-permission/role-permission.component';
+// import { RolePermissionComponent } from './main/admin/role-permission/role-permission.component';
 
-import { LovComponent } from './main/admin/lov/lov.component';
-import { ModulsComponent } from './main/admin/moduls/moduls.component';
-import { RoleComponent } from './main/Admin/role/role.component';
-import { AdminRoutingModule } from './main/Admin/admin-routing.module';
+// import { LovComponent } from './main/admin/lov/lov.component';
+// import { ModulsComponent } from './main/admin/moduls/moduls.component';
+// import { RoleComponent } from './main/Admin/role/role.component';
+ import { AdminRoutingModule } from './main/Admin/admin-routing.module';
+// import { OrganizationComponent } from './admin/organization/organization.component';
 
 
 
@@ -66,7 +66,7 @@ const appRoutes: Routes = [
  
 
 
-  declarations: [AppComponent, ModulsComponent, LovComponent,LOVDetailsComponent, RoleComponent,ModuleOprationComponent,RolePermissionComponent],
+  declarations: [AppComponent],
 
  
 
@@ -74,6 +74,7 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    // FormGroup,
     RouterModule.forRoot(appRoutes, {
       scrollPositionRestoration: 'enabled', // Add options right here
       relativeLinkResolution: 'legacy',
@@ -81,7 +82,8 @@ const appRoutes: Routes = [
       
     }),
     TranslateModule.forRoot(),
-
+    FormsModule,
+    ReactiveFormsModule,
     //NgBootstrap
     NgbModule,
     ToastrModule.forRoot(),

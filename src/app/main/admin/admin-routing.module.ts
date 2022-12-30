@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DemoComponent } from './organization/demo/demo.component';
+import { ModuleOprationComponent } from './module-opration/module-opration.component';
 
 
 const routes: Routes = [
-  {path: 'demo', component:DemoComponent}
+  {path: 'module-opration', component:ModuleOprationComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule
+  ]
 })
 export class AdminRoutingModule { }
