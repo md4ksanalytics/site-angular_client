@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LOVDetailsComponent } from './Lov/LOV-Details/lov-details.component';
-import { LovComponent } from './Lov/lov/lov.component';
+import { ModuleOprationComponent } from './module-opration/module-opration.component';
 
 
 const routes: Routes = [
-  {path:'admin/lov', component:LovComponent},
-  {
-    path:'lov-details', component:LOVDetailsComponent
-  },
+  {path:'module-opration', component:ModuleOprationComponent},
+ 
 ];
 
 @NgModule({

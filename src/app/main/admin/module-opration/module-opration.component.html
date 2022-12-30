@@ -1,1 +1,82 @@
-<p>module-opration works!</p>
+<div class="card">
+    <form formGroup="userForm">
+        <div class="mt-5">
+       <div class="form-row">
+         <div class="col-md-12">
+            <div class="form-group">
+                <label>UpdatedDate</label>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" formControlName="UpdatedDate" class="form-control" placeholder="UpdatedDate">
+                </div>
+            </div>
+         </div>
+         <div class="col-md-12">
+            <div class="form-group">
+                <label>UpdatedBy</label>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" formControlName="UpdatedBy" class="form-control" placeholder="UpdatedBy">
+                </div>
+            </div>
+         </div>
+         <div class="col-md-12">
+            <div class="form-group">
+                <label>CreatedDate</label>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" formControlName="CreatedDate" class="form-control" placeholder="CreatedDate">
+                </div>
+            </div>
+         </div>
+         <div class="col-md-12">
+            <div class="form-group">
+                <label>CreatedBy</label>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" formControlName="CreatedBy" class="form-control" placeholder="CreatedBy">
+                </div>
+            </div>
+         </div>
+         <div class="form-row mt-4">
+            <div class="col-md-6">
+                <button type="button" class="btn btn-primary" (click)="addItem()">Add</button>&nbsp;
+                <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+            </div>
+            <div class="col-md-8 mt-4 mb-4">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>UpdatedDate</th>
+                            <th>UpdatedBy</th>
+                            <th>CreatedDate</th>
+                            <th>UpdatedBy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of listData">
+                            <td><span>{{item.UpdatedDate}}</span></td>
+                            <td><span>{{item.UpdatedBy}}</span></td>
+                            <td><span>{{item.CreatedDate}}</span></td>
+                            <td><span>{{item.CreatedBy}}</span></td>
+                            <td><button type="button" class="btn btn-primary" (click)="removeItem()">Remove</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+         </div>
+    
+    
+    
+        
+       </div>
+    
+        </div>
+    
+    </form>
+    </div>
