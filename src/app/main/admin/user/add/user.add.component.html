@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <h3>{{user? ('USER.FORM.TITLEADD'  | translate) : ('USER.FORM.TITLEEDIT'  | translate)}}</h3>
+        <hr>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+          <div class="row match-height">
+            <div class="col-sm-6 col-12">
+              <label> {{'USER.FORM.NAME' | translate}}</label>
+              <input formControlName="name" type="text" class="form-control" placeholder="Name"
+                [ngClass]="{ 'is-invalid': f.name.touched && f.name.errors,'is-valid' : f.name.touched && f.name.valid }"
+                required />
+              <div *ngIf="f.name.touched && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">{{'USER.FORM.VALIDATION.NAME' | translate}} </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-12">
+              <label>{{'USER.FORM.ROLE' | translate}} </label>
+              <input formControlName="role" type="text" class="form-control" placeholder="Role"
+                [ngClass]="{ 'is-invalid': f.role.touched && f.role.errors,'is-valid' : f.role.touched && f.role.valid }"
+                required />
+              <div *ngIf="f.role.touched && f.role.errors" class="invalid-feedback">
+                <div *ngIf="f.role.errors.required">{{'USER.FORM.VALIDATION.ROLE' |translate}}</div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-12" style="padding: 10px;">
+
+            </div>
+            <div class="col-sm-6 col-12">
+              <label>{{'USER.FORM.MOBILE' | translate}}</label>
+              <input formControlName="mobile" type="text" class="form-control" placeholder="Mobile"
+                [ngClass]="{ 'is-invalid': f.role.touched && f.mobile.errors,'is-valid' : f.mobile.touched && f.mobile.valid }"
+                required />
+              <div *ngIf="f.mobile.touched && f.mobile.errors" class="invalid-feedback">
+                <div *ngIf="f.mobile.errors.required">{{'USER.FORM.VALIDATION.ROLE' |translate}}</div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-12">
+              <label>{{'USER.FORM.EMAIL' | translate}} d</label>
+              <input type="text" formControlName="email" class="form-control"
+                [ngClass]="{ 'is-invalid': f.email.touched && f.email.errors,'is-valid' : f.email.touched && f.email.valid }" />
+
+              <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">{{'USER.FORM.VALIDATION.EMAILINVALID' |translate}}
+                </div>
+
+                <div *ngIf="f.email.errors.email">{{'USER.FORM.VALIDATION.EMAIL' |translate}}</div>
+
+              </div>
+            </div>
+            <div class="col-md-12 col-12" style="padding: 10px;">
+ 
+            </div>
+            <div class="col-md-12 col-12">
+              <div class="form-group">
+                <button type="submit"  class="btn btn-primary float-right" >Register</button>
+                <button type="button" (click)="onCancel()" class="btn btn-warning float-right" style="margin-right: 27px;">
+                  Cancel
+                </button>               
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>

@@ -23,6 +23,7 @@ import {ServiceWorkerModule, SwRegistrationOptions} from '@angular/service-worke
 import { environment } from '../environments/environment';
 import { HomeComponent } from './main/logs/home.component'; 
 import { JwtAuthInterceptor } from './auth/helpers';
+import { AdminModule } from './main/admin/admin.module';
  
 
 const appRoutes: Routes = [
@@ -37,10 +38,9 @@ const appRoutes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/logs-monitoring/pages/miscellaneous/error' //Error 404 - Page not found
+    redirectTo: '/pages/miscellaneous/error' //Error 404 - Page not found
   }
 ];
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -53,7 +53,7 @@ const appRoutes: Routes = [
       useHash: false
     }),
     TranslateModule.forRoot(),
-
+    AdminModule,
     //NgBootstrap
     NgbModule,
     ToastrModule.forRoot(),

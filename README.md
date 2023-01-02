@@ -7,7 +7,7 @@ ng build --configuration production --output-hashing none
 
 ng build --configuration dev --output-hashing none   
 ng build --configuration staging --output-hashing none  
-ng build --configuration staging_domain --output-hashing none  
+ng build --configuration staging_domain --output-hashing none  P
 ng build --configuration prod --output-hashing none   
 ng build --configuration preprod --output-hashing none   
 ng build --configuration preprod_domain --output-hashing none   
@@ -16,6 +16,7 @@ ng build --configuration local --output-hashing none
 
 npm install -g http-serve
 http-server -c-1 .
+angular cli
 
 #npm i angular-oauth2-oidc --save --legacy-peer-deps
 
@@ -46,3 +47,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+//gshdshdh
+hello

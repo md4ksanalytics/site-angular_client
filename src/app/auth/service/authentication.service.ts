@@ -163,20 +163,11 @@ export class AuthenticationService {
 
   public checkUserNew() {
     this.loginFlag = true;
-    this.getDb();
+   // this.getDb();
     // this.router.navigate(['/dashboard/loading']);
   }
 
-  public getDb() {
-    let url = `${environment.apiAuditUrl}` + `/api/get/db`;
-    this.selectDbLoading=true;
-    return this._http.getWithoutError(url).subscribe((result) => {
-      this.selectDbLoading=false;
-      this.selectDbType=result[0].value;
-      this.dbList = result;
-      this.subject.next(result[0].value);
-    });
-  }
+  
   public configure() {
     this.oauthService.tokenValidationHandler = new JwksValidationHandler();
     this.oauthService.configure(this.authConfig);

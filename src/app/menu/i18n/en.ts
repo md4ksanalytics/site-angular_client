@@ -4,9 +4,12 @@ export const locale = {
   lang: "en",
   data: {
     MENU: {
-      HOME: "Dashboard",
-      Form: "Form",
-     
+      ADMIN: "Admin",
+      USER: "Manage Users",
+      ROLE: "Manage ROLE",
+      ORG:"Manage Organization",
+      Module: "Manage Module",
+      Lov: "Manage LOV"
     },
   },
 };

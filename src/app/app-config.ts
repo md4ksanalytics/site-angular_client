@@ -18,7 +18,7 @@ export const coreConfig: CoreConfig = {
   app: {
     appName     : 'Site',                                        // App Name
     appTitle    : 'Site', // App Title
-    appLogoImage: 'assets/images/logo/Site.png',                  // App Logo
+    appLogoImage: 'assets/images/logo/Site.jpg',                  // App Logo
     appLanguage : 'en',                                           // App Default Language (en, fr, de, pt etc..)
   },
   layout: {
@@ -32,7 +32,7 @@ export const coreConfig: CoreConfig = {
     // ? For horizontal menu, navbar type will work for navMenu type
     navbar: {
       hidden               : false,           // Boolean: true, false
-      type                 : 'floating-nav',  // navbar-static-top, fixed-top, floating-nav, d-none
+      type                 : 'navbar-static-top',  // navbar-static-top, fixed-top, floating-nav, d-none
       background           : 'navbar-light',  // navbar-light. navbar-dark
       customBackgroundColor: true,            // Boolean: true, false
       backgroundColor      : ''               // BS color i.e bg-primary, bg-success
