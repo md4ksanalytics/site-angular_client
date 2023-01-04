@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common"; 
-import { LovComponent } from "./Lov/lov/lov.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { UserComponent } from "./user/user.component";
 import { RouterModule, Routes } from "@angular/router";
@@ -11,12 +10,21 @@ import { TranslateModule } from "@ngx-translate/core";
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import { CoreDirectivesModule } from "@core/directives/directives";
 import { UserAddComponent } from "./user/add/user.add.component";
+import { LovComponent } from "./llov/lov/lov.component";
+import { LovdtlComponent } from './llov/lovdtl/lovdtl.component';
+import { AddComponent } from './llov/lovdtl/add/add.component';
 
 const routes: Routes = [{ path: "admin/user", component: UserComponent },
-{ path: "admin/user/add", component: UserAddComponent },{ path: "admin/user/edit", component: UserAddComponent }];
+{ path: "admin/user/add", component: UserAddComponent },{ path: "admin/user/edit", component: UserAddComponent },
+{path:"admin/llov/lov", component:LovComponent},
+{path:"admin/llov/lovdtl", component:LovdtlComponent},
+{path:"admin/llov/lovdtl/edit",component:LovdtlComponent},
+{path:"admin/llov/lovdtl/add", component:AddComponent}
+
+];
 
 @NgModule({
-  declarations: [LovComponent, UserComponent,UserAddComponent],
+  declarations: [LovComponent, UserComponent,UserAddComponent,LovdtlComponent, AddComponent],
   imports: [
     CommonModule, 
     NgbModule,
