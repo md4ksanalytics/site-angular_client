@@ -4,6 +4,7 @@ import { fadeInLeft, zoomIn, fadeIn } from '@core/animations/core.animation';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
+
 @Component({
   selector: 'content',
   templateUrl: './content.component.html',
