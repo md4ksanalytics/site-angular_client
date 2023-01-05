@@ -11,12 +11,21 @@ import { TranslateModule } from "@ngx-translate/core";
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import { CoreDirectivesModule } from "@core/directives/directives";
 import { UserAddComponent } from "./user/add/user.add.component";
+import { OrganizationComponent } from './organization/organization.component';
+import { OrganizationAddComponent } from "./organization/add/organization.add.component";
+import { HttpClientModule } from "@angular/common/http";
+
+
 
 const routes: Routes = [{ path: "admin/user", component: UserComponent },
-{ path: "admin/user/add", component: UserAddComponent },{ path: "admin/user/edit", component: UserAddComponent }];
+{ path: "admin/user/add", component: UserAddComponent },{ path: "admin/user/edit", component: UserAddComponent },
+{ path: "admin/organization", component:OrganizationComponent},
+{ path: "admin/organization/add", component:OrganizationAddComponent},{ path: "admin/organization/edit", component:OrganizationAddComponent}
+
+];
 
 @NgModule({
-  declarations: [LovComponent, UserComponent,UserAddComponent],
+  declarations: [LovComponent, UserComponent,UserAddComponent, OrganizationComponent,OrganizationAddComponent],
   imports: [
     CommonModule, 
     NgbModule,
@@ -25,7 +34,8 @@ const routes: Routes = [{ path: "admin/user", component: UserComponent },
     CoreCardModule,
     TranslateModule,
     NgxDatatableModule,
-    CoreDirectivesModule
+    CoreDirectivesModule,
+    HttpClientModule
     
   ],
 })

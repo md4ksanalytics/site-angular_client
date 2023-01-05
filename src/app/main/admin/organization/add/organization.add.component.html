@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <h3>{{organization? ('ORGANIZATION.FORM.TITLEADD' | translate) : ('ORGANIZATION.FORM.TITLEEDIT' | translate)}}
+        </h3>
+        <hr>
+        <form [formGroup]="organizationForm" (ngSubmit)="onSubmit()">
+
+          <div class="row match-height">
+            <div class="col-sm-6 col-12">
+              <label> {{'ORGANIZATION.FORM.NAME' | translate}}</label>
+              <input formControlName="name" type="text" class="form-control" placeholder="Name"
+                [ngClass]="{ 'is-invalid': f.name.touched && f.name.errors,'is-valid' : f.name.touched && f.name.valid }"
+                required />
+              <div *ngIf="f.name.touched && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">{{'ORGANIZATION.FORM.VALIDATION.NAME' | translate}} </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-12">
+              <label>{{'ORGANIZATION.FORM.STATUS' | translate}}</label>
+              <input formControlName="status" type="text" class="form-control" placeholder="status"
+                [ngClass]="{ 'is-invalid': f.status.touched && f.status.errors,'is-valid' : f.status.touched && f.status.valid }"
+                required />
+              <div *ngIf="f.status.touched && f.status.errors" class="invalid-feedback">
+                <div *ngIf="f.status.errors.required">{{'ORGANIZATION.FORM.VALIDATION.STATUS' |translate}}</div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-12" style="padding: 10px;">
+
+            </div>
+            
+
+            <div class="col-sm-6 col-12">
+              <label>{{'ORGANIZATION.FORM.TYPE' | translate}}</label>
+              <input formControlName="type" type="text" class="form-control" placeholder="type"
+                [ngClass]="{ 'is-invalid': f.type.touched && f.type.errors,'is-valid' : f.type.touched && f.type.valid }"
+                required />
+              <div *ngIf="f.type.touched && f.type.errors" class="invalid-feedback">
+                <div *ngIf="f.type.errors.required">{{'ORGANIZATION.FORM.VALIDATION.TYPE' |translate}}</div>
+              </div>
+            </div>
+
+            
+
+            
+
+           
+            <div class="col-md-12 col-12" style="padding: 10px;">
+
+            </div>
+            <div class="col-md-12 col-12">
+              <div class="form-group">
+                <button type="submit"  class="btn btn-primary float-right">Register</button>
+                <button type="button" (click)="onCancel()" class="btn btn-warning float-right"
+                  style="margin-right: 27px;">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
