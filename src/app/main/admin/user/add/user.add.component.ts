@@ -56,4 +56,5 @@ export class UserAddComponent {
   onCancel(): void {
    this._router.navigate(['admin/user'])
   }
+  
 }

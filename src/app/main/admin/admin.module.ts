@@ -11,12 +11,22 @@ import { TranslateModule } from "@ngx-translate/core";
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import { CoreDirectivesModule } from "@core/directives/directives";
 import { UserAddComponent } from "./user/add/user.add.component";
+import { AddmenuComponent } from "./menumodel/addmenu.component";
+import { MenuAddComponent } from "./menumodel/addmenu/menu.add.component";
+import { MenuselectComponent } from "./menumodel/addmenu/selectmenu/menuselect/menuselect.component";
 
 const routes: Routes = [{ path: "admin/user", component: UserComponent },
-{ path: "admin/user/add", component: UserAddComponent },{ path: "admin/user/edit", component: UserAddComponent }];
+{ path: "admin/user/add", component: UserAddComponent },
+{ path: "admin/user/edit", component: UserAddComponent },
+//Addmenu 
+{ path: "admin/addmenu", component: AddmenuComponent },
+{ path: "admin/addmenu/menu.add", component:MenuAddComponent},
+{ path: "admin/addmenu/menuselect", component: MenuselectComponent },
+];
 
 @NgModule({
-  declarations: [LovComponent, UserComponent,UserAddComponent],
+  declarations: [LovComponent, UserComponent,UserAddComponent, AddmenuComponent, MenuAddComponent,
+    MenuselectComponent,],
   imports: [
     CommonModule, 
     NgbModule,

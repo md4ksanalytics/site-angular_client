@@ -44,11 +44,17 @@ export const menu: CoreMenu[] =
         id: "lov",
         title: "Manage LOV",
         type: "item",
-        
         translate: "MENU.Lov",
         icon: "list",
         url: "admin/lov",
+      },{
+        id: "Menu",
+        title: "Manage Menu",
+        type: "item",
+        icon: "list",
+        translate: "MENU.Menu",
+        url: "admin/addmenu",
       },
     ],
   },
-];
+  ];
