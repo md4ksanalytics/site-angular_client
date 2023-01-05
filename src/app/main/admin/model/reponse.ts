@@ -6,4 +6,12 @@ export interface User {
     mobile:string;
     
   }
+
+  export interface LOV {
+    id:string;
+    name: string;
+    value: string;
+   
+    
+  }
    

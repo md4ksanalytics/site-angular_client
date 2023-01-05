@@ -11,6 +11,7 @@ export const locale = {
         NAME: "Name",
         ACTION: "Action",
         ROLE: "Role",
+        ADD:"Add User"
       },
       FORM: {
         TITLEADD: "User Edit",

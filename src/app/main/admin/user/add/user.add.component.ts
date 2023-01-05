@@ -35,7 +35,6 @@ export class UserAddComponent {
       email: ["", [Validators.required, Validators.email]],
       mobile: ["", [Validators.required]],
       role: ["", [Validators.required]],
-      acceptTerms: [false, Validators.requiredTrue],
     });
   }
 
