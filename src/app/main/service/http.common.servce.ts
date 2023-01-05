@@ -14,12 +14,16 @@ export class HttpCommonService {
    *
    * @param {HttpClient} _http
    */
-  constructor(private auth : AuthenticationService, private _http: HttpClient) {
+  urlMap = new Map<string, string>();
+  constructor(private auth: AuthenticationService, private _http: HttpClient) {
     console.log(auth);
+    this.urlMap.set("user", "/secure/admin/user");
+    this.urlMap.set("role", "/secure/admin/role");
+    this.urlMap.set("organization", "/secure/admin/organization");
   }
 
   handleError(err: HttpErrorResponse): Observable<ResponseRet<any>> {
-  //  debugger
+    //  debugger
     console.log(err);
     let ret: ResponseRet<any> = { status: "error", message: [] };
     return of(ret);
@@ -27,7 +31,7 @@ export class HttpCommonService {
 
   handleEmptyError(err: HttpErrorResponse): Observable<any> {
     console.log(err);
-    if(err.status==401){
+    if (err.status == 401) {
       this.auth.logoff();
     }
     return of([]);
@@ -36,39 +40,31 @@ export class HttpCommonService {
    * Get all users
    */
   get(url: string): Observable<ResponseRet<any>> {
-    return this._http
-      .get<ResponseRet<any>>(url)
-      .pipe(
-        map((response: ResponseRet<any>) => response),
-        catchError((err: HttpErrorResponse) => this.handleError(err))
-      );
+    return this._http.get<ResponseRet<any>>(url).pipe(
+      map((response: ResponseRet<any>) => response),
+      catchError((err: HttpErrorResponse) => this.handleError(err))
+    );
   }
 
-  getWithoutError(url: string): Observable<any> {
-    return this._http
-      .get<any>(url)
-      .pipe(
-        map((response: ResponseRet<any>) => response.message),
-        catchError((err: HttpErrorResponse) => this.handleEmptyError(err))
-      );
-  } 
+  getWithoutError(mainUrl: string, url: string): Observable<any> {
+    return this._http.get<any>(this.urlMap.get(mainUrl)+  url).pipe(
+      map((response: ResponseRet<any>) => response.message),
+      catchError((err: HttpErrorResponse) => this.handleEmptyError(err))
+    );
+  }
 
   getDomainDetailsWithoutError(url: string): Observable<any> {
-    return this._http
-      .get<any>(url)
-      .pipe(
-        map((response: ResponseRet<any>) => response),
-        catchError((err: HttpErrorResponse) => this.handleEmptyError(err))
-      );
-  } 
-  postWithoutError(url: string,body : any): Observable<any> {
-    return this._http
-      .post<any>(url,body)
-      .pipe(
-        map((response: ResponseRet<any>) => {
-          console.log(response);
-          return response;
-        })
-      );
-  } 
+    return this._http.get<any>(url).pipe(
+      map((response: ResponseRet<any>) => response),
+      catchError((err: HttpErrorResponse) => this.handleEmptyError(err))
+    );
+  }
+  postWithoutError(mainUrl:string,url: string, body: any): Observable<any> {
+    return this._http.post<any>(this.urlMap.get(mainUrl)+ url, body).pipe(
+      map((response: ResponseRet<any>) => {
+        console.log(response);
+        return response;
+      })
+    );
+  }
 }

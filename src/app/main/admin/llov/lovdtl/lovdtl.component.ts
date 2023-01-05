@@ -1,55 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { locale as en } from "./i18n/en";
-import { locale as fr } from "./i18n/fr";
-import { locale as de } from "./i18n/de";
-import { locale as pt } from "./i18n/pt";
-import { User } from "../model/reponse";
-import { CoreTranslationService } from "@core/services/translation.service";
+import { CoreTranslationService } from '@core/services/translation.service';
+import { Lov } from '../../model/reponse';
+import { locale as en } from './i18n/en';
 
 @Component({
-  selector: 'app-lov',
-  templateUrl: './lov.component.html',
-  styleUrls: ['./lov.component.scss']
+  selector: 'app-lovdtl',
+  templateUrl: './lovdtl.component.html',
+  styleUrls: ['./lovdtl.component.scss']
 })
-export class LovComponent {
+export class LovdtlComponent {
 
-  rows: Array<User> = [];
-  rowsBackup: Array<User>;
-  user: User;
+  rows: Array<Lov> = [];
+  rowsBackup: Array<Lov>;
+  user: Lov;
   flagAddEdit=false;
   constructor(private _coreTranslationService: CoreTranslationService,private _router: Router) {
-    this._coreTranslationService.translate(en, fr, de, pt);
-    
-    //sample data
-    this.rows.push({
-      id: "1",
-      email: "g@c.com",
-      name: "g1",
-      mobile: "213123124",
-      role: "admin",
-    });
-    this.rows.push({
-      id: "2",
-      email: "g2@c.com",
-      name: "g2",
-      mobile: "213123124",
-      role: "admin",
-    });
+    this._coreTranslationService.translate(en);
   }
 
-  edit(rec: User) {
+  edit(rec: Lov) {
     console.log(rec);
     this.flagAddEdit=true;
-    this._router.navigate(['/admin/user/edit']);
+    this._router.navigate(['/admin/llov/lovdtl/edit']);
   }
-  delete(rec: User) {
+  delete(rec: Lov) {
     console.log(rec);
   }
   add() {
     this.flagAddEdit=true;
     this.user=undefined;
-    this._router.navigate(['/admin/user/add']);
+    this._router.navigate(['/admin/llov/lovdtl/add']);
   }
 
   filterUpdate(event) {
@@ -73,5 +54,6 @@ export class LovComponent {
     // this.tableRowDetails_buyer_to_Gateway.offset = 0;
     // Whenever the filter changes, always go back to the first page
   }
-}
 
+
+}
