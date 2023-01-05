@@ -6,4 +6,12 @@ export interface User {
     mobile:string;
     
   }
-   
+   export interface ModuleOpration
+   {
+        id:string;
+        name:string;
+        updatedDate:string;
+        updatedBy:string;
+        createdDate:string;
+        createdBy:string;
+   }

@@ -49,6 +49,14 @@ export const menu: CoreMenu[] =
         icon: "list",
         url: "admin/lov",
       },
+      {
+        id: "module-opration",
+        title: "Manage Module-opration",
+        type: "item",
+        icon: "command",
+        translate: "MENU.Module-opration",
+        url: "module-operation",
+      }
     ],
   },
 ];
