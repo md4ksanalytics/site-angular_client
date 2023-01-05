@@ -9,6 +9,23 @@ export class UserService {
   public user:User;
   constructor(private http: HttpCommonService) {
     //sample data
+       //sample data
+      //  this.rows.push({
+      //   id: "1",
+      //   email: "g@c.com",
+      //   name: "g1",
+      //   mobile: "213123124",
+      //   roleName: "admin",
+      //   organizationName:"abc",
+
+      // });
+      // this.rows.push({
+      //   id: "2",
+      //   email: "g2@c.com",
+      //   name: "g2",
+      //   mobile: "213123124",
+      //   role: "admin",
+      // });
   }
   public getList(force: boolean) {
     if (force || this.rows.length == 0) {

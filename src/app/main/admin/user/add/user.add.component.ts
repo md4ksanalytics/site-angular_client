@@ -35,12 +35,12 @@ export class UserAddComponent {
     this.select.getSelect("role");
     this.select.getSelect("organization");
     this.userForm = this.formBuilder.group({
-      name: [this.userService? this.userService.user.name:"", Validators.required],
-      email: [this.userService? this.userService.user.email:"", [Validators.required, Validators.email]],
-      mobile: [this.userService? this.userService.user.mobile:"", [Validators.required]],
-      roleId: [this.userService? this.userService.user.roleId:0, [Validators.required]],
-      active:[this.userService? this.userService.user.active:"", [Validators.required]],
-      organizationId: [this.userService? this.userService.user.organizationId:0, [Validators.required]],
+      name: [this.userService.user? this.userService.user.name:"", Validators.required],
+      email: [this.userService.user? this.userService.user.email:"", [Validators.required, Validators.email]],
+      mobile: [this.userService.user? this.userService.user.mobile:"", [Validators.required]],
+      roleId: [this.userService.user? this.userService.user.roleId:0, [Validators.required]],
+      active:[this.userService.user? this.userService.user.active:"", [Validators.required]],
+      organizationId: [this.userService.user? this.userService.user.organizationId:0, [Validators.required]],
     });
   }
 
@@ -53,10 +53,19 @@ export class UserAddComponent {
     if (this.userForm.invalid) {
       return;
     }
-    this.userService.save(this.userForm.value).subscribe(ret=>{
-      
-    });
+    if(!this.userService.user){
+      this.userService.rows.push(this.userForm.value);
+
+    }else{
+      // this.userService.user.email=
+    }
     this._router.navigate(['admin/user'])
+    // this.userService.save(this.userForm.value).subscribe(ret=>{
+    //   if(ret.id){
+    //     this._router.navigate(['admin/user'])
+    //   }
+    // });
+ 
 
     console.log(JSON.stringify(this.userForm.value, null, 2));
   }
