@@ -3,3 +3,9 @@ export interface ResponseRet<T> {
   message: T;
 }
  
+export interface SelectList {
+  id: string;
+  name: string;
+  
+}
+ 

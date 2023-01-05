@@ -11,7 +11,10 @@ export const locale = {
         NAME: "Name",
         ACTION: "Action",
         ROLE: "Role",
-        ADD:"Add User"
+        ADD:"Add User",
+        organizationName:"Organization",
+        updatedBy:"Updated by",
+        UpdateDate:"Updated Date"
       },
       FORM: {
         TITLEADD: "User Edit",

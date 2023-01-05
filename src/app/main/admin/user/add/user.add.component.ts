@@ -12,6 +12,8 @@ import {
   FormGroup,
   Validators,
 } from "@angular/forms";
+import { SelectService } from "app/main/service/select.service";
+import { UserService } from "../service/user.service";
 
 @Component({
   selector: "app-user-add",
@@ -25,16 +27,20 @@ export class UserAddComponent {
   
 
   constructor(
-    private _coreTranslationService: CoreTranslationService,
-    private formBuilder: FormBuilder,private _router: Router
+    private _coreTranslationService: CoreTranslationService,public select: SelectService,
+    private formBuilder: FormBuilder,private _router: Router,private userService:UserService
   ) {
     this._coreTranslationService.translate(en, fr, de, pt);
 
+    this.select.getSelect("role");
+    this.select.getSelect("organization");
     this.userForm = this.formBuilder.group({
-      name: ["", Validators.required],
-      email: ["", [Validators.required, Validators.email]],
-      mobile: ["", [Validators.required]],
-      role: ["", [Validators.required]],
+      name: [this.userService? this.userService.user.name:"", Validators.required],
+      email: [this.userService? this.userService.user.email:"", [Validators.required, Validators.email]],
+      mobile: [this.userService? this.userService.user.mobile:"", [Validators.required]],
+      roleId: [this.userService? this.userService.user.roleId:0, [Validators.required]],
+      active:[this.userService? this.userService.user.active:"", [Validators.required]],
+      organizationId: [this.userService? this.userService.user.organizationId:0, [Validators.required]],
     });
   }
 
@@ -47,6 +53,9 @@ export class UserAddComponent {
     if (this.userForm.invalid) {
       return;
     }
+    this.userService.save(this.userForm.value).subscribe(ret=>{
+      
+    });
     this._router.navigate(['admin/user'])
 
     console.log(JSON.stringify(this.userForm.value, null, 2));
