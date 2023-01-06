@@ -20,7 +20,7 @@
           </div>
         </div>
         <ngx-datatable class="bootstrap core-bootstrap" [columnMode]="'force'" [rowHeight]="'auto'" [limit]="10"
-          [rows]="rows" [count]="rows.length">
+          [rows]="organizationService.rows" [count]="organizationService.rows.length">
           <ngx-datatable-column name="{{'ORGANIZATION.GRID.NAME' |translate}}" prop="name">
             <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
               {{row.name}}
@@ -55,6 +55,11 @@
             <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
               {{row.created_by}}
             </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="{{'ORGANIZATION.GRID.ACTION' |translate}}" prop="id">
+            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+              <a (click)="edit(row)"><i  data-feather="edit"></i></a>  |   <a (click)="delete(row)"><i   data-feather="trash"></i></a>
+          </ng-template>
           </ngx-datatable-column>
         </ngx-datatable>
       </div>

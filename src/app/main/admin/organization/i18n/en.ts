@@ -13,6 +13,7 @@ export const locale = {
         UPDATE_DATE: "Update Date",
         CREATED_DATE: "Created Date",
         CREATED_BY: "Created By",
+        ACTION:"Action"
         
       },
       FORM: {
