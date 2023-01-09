@@ -1,13 +1,3 @@
-
-
-  export interface LOV {
-    id:string;
-    name: string;
-    value: string;
-   
-    
-  }
-
   export interface Lov {
     id:string;
     name: string;

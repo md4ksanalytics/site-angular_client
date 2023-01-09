@@ -10,16 +10,17 @@ import { TranslateModule } from "@ngx-translate/core";
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import { CoreDirectivesModule } from "@core/directives/directives";
 import { UserAddComponent } from "./user/add/user.add.component";
-import { LovComponent } from "./llov/lov/lov.component";
-import { LovdtlComponent } from './llov/lovdtl/lovdtl.component';
-import { AddComponent } from './llov/lovdtl/add/add.component';
+import { LovComponent } from "./lov/lov.component";
+import { LovdtlComponent } from "./lovdtl/lovdtl.component";
+import { AddComponent } from "./lovdtl/add/add.component";
+
 
 const routes: Routes = [{ path: "admin/user", component: UserComponent },
 { path: "admin/user/add", component: UserAddComponent },{ path: "admin/user/edit", component: UserAddComponent },
-{path:"admin/llov/lov", component:LovComponent},
-{path:"admin/llov/lovdtl", component:LovdtlComponent},
-{path:"admin/llov/lovdtl/edit",component:LovdtlComponent},
-{path:"admin/llov/lovdtl/add", component:AddComponent}
+{path:"admin/lov", component:LovComponent},
+{path:"admin/lovdtl", component:LovdtlComponent},
+{path:"admin/lovdtl/edit",component:AddComponent},
+{path:"admin/lovdtl/add", component:AddComponent}
 
 ];
 

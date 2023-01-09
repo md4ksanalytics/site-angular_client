@@ -47,7 +47,7 @@ export const menu: CoreMenu[] =
         
         translate: "MENU.Lov",
         icon: "list",
-        url: "admin/llov/lov",
+        url: "admin/lov",
       },
     ],
   },

@@ -3,7 +3,7 @@ import { environment } from "environments/environment";
 export const locale = {
     lang: "en",
     data: {
-      USER: {
+      LOV: {
         GRID: {
           TITLE: "Manage Lov",
           NAME: "Name",
