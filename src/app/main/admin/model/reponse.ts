@@ -1,21 +1,27 @@
-export interface User {
+
+
+  export interface LOV {
     id:string;
     name: string;
-    email: string;
-    role: string;
-    mobile:string;
+    value: string;
+   
     
   }
 
-  export interface Organization{
+  
+  export interface Lov {
     id:string;
     name: string;
-    type:string;
-    update_date:string;
-    updated_by:string;
-    created_by:string;
-    created_date:string;
-    status: string;
-
+    Org_Id: number;
+    updatedName: string;
+    createdDate: Date;
+    createdName: string;
+    activate: string;
+    action: string;
+    parentId: number;
+    parentName: string;
+    import:string;
   }
+
+
    

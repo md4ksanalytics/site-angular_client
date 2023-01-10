@@ -10,49 +10,51 @@ export class OrganizationService {
   
   public rows:Array<Organization> = [];
   public rowsBackup: Array<Organization> =[]
-  public organization:Organization;
+  public organizationDetail:Organization;
+  public xyz;
+  public flagAddEdit=false;
 
-  postProduct(value: any) {
-      throw new Error("Method not implemented.");
-  }
+  // postProduct(value: any) {
+  //     throw new Error("Method not implemented.");
+  // }
 
-  orgDetail={
-    name:"",
-    status:"",
-    type:""
-  }
+  // orgDetail={
+  //   name:"",
+  //   status:"",
+  //   type:""
+  // }
 
   constructor(private http:HttpCommonService) {
 
-    // //sample data
-    this.rows.push({
-      id: "1",
-      type: "xyz",
-      name: "g1",
-      status: "213123124",
-      update_date: "admin",
-      updated_by: '12',
-      created_by: '12',
-      created_date: '12'
-    });
-    this.rows.push({
-      id: "2",
-      name: "g2",
-      type: 'xyz',
-      update_date: '112',
-      updated_by: '12',
-      created_by: '12',
-      created_date: '12',
-      status: 'yes'
-    }); 
+    //sample data
+    // this.rows.push({
+    //   id: "",
+    //   type: "",
+    //   name: "",
+    //   status: "",
+    //   update_date: "",
+    //   updated_by: '',
+    //   created_by: '',
+    //   created_date: ''
+    // });
+    // this.rows.push({
+    //   id: "2",
+    //   name: "g2",
+    //   type: 'xyz',
+    //   update_date: '112',
+    //   updated_by: '12',
+    //   created_by: '12',
+    //   created_date: '12',
+    //   status: 'yes'
+    // }); 
    }
    public getList(force: boolean) {
     if (force || this.rows.length == 0) {
       this.http
         .getWithoutError("organization", "/list")
-        .subscribe((list: Array<Organization>) => {
+        .subscribe((list: Array<Organization>) =>   {
           this.rows = list;
-          this.rowsBackup=list;
+           this.rowsBackup=list;
         });
     }
   }
@@ -62,8 +64,9 @@ export class OrganizationService {
          
     
   }
+  
   public edit(organization:Organization) {
-    this.orgDetail=organization;
+    this.organizationDetail=organization;
   }
   public delete(organization:Organization) {   
     // return this.http

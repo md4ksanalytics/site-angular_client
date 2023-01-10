@@ -25,7 +25,8 @@ export const menu: CoreMenu[] =
         icon: "user-check",
         translate: "MENU.ROLE",
         url: "admin/role",
-      }, {
+      },
+       {
         id: "Organization",
         title: "Organization",
         type: "item",
@@ -33,21 +34,23 @@ export const menu: CoreMenu[] =
         
         translate: "MENU.ORG",
         url: "admin/organization",
-      }, {
+      },
+       {
         id: "module",
         title: "Manage Module",
         type: "item",
         icon: "command",
         translate: "MENU.Module",
         url: "admin/module",
-      },{
+      },
+      {
         id: "lov",
         title: "Manage LOV",
         type: "item",
         
         translate: "MENU.Lov",
         icon: "list",
-        url: "admin/lov",
+        url: "admin/llov/lov",
       },
     ],
   },
