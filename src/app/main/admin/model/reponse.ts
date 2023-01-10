@@ -1,5 +1,5 @@
   export interface Lov {
-    id:string;
+    id:Lov;
     name: string;
     Org_Id: number;
     updatedName: string;

@@ -25,21 +25,24 @@ export class LovdtlComponent {
 
   edit(rec: Lov) {
     //get the all lov based on 
-    console.log(rec);
+    //if(this.flagAddEdit=true){
+    //console.log(rec);
     this.lovService.edit(rec);
-   // this.flagAddEdit=true;
+   this.lovService.flag=3;
     this._router.navigate(['/admin/lovdtl/edit']);
+   // }
   }
 
   delete(rec: Lov) {
-    this.lovService.rows.forEach((value,index)=>{
-      if(value==rec)
-      this.lovService.rows.splice(index,1);
-    });
+    //if(this.flagAddEdit=false){
+     this.lovService.delete(rec);
+ // }
   }
 
   add() {
    // this.flagAddEdit=true;
+    this.lovService.flag=1;
+  // console.log(this.lovService.lovdtl);
     this.lovService.lovdtl=undefined;
     this._router.navigate(['/admin/lovdtl/add']);
   }
