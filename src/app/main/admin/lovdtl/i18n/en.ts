@@ -36,7 +36,10 @@ export const locale = {
               UPDATEDNAME:"Name is required",
               CREATEDDATE:"Date is required",
               CREATEDNAME:"Name is required",
-              ACTIVATE:"Name is required"
+              ACTIVATE:"Name is required",
+              PARENTID:"ParentId is required",
+              PARENTNAME:"Name is required",
+              IMPORT:"Import is required"
             },
           },
         },

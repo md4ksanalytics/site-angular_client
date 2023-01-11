@@ -5,6 +5,7 @@ import { Lov } from '../model/reponse';
 
 import { locale as en } from './i18n/en';
 import { LovService } from './service/lov.service';
+import  Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-lovdtl',
@@ -35,12 +36,42 @@ export class LovdtlComponent {
 
   delete(rec: Lov) {
     //if(this.flagAddEdit=false){
-     this.lovService.delete(rec);
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#7367F0',
+          cancelButtonColor: '#E42728',
+          confirmButtonText: 'Yes, delete it!',
+          customClass: {
+            confirmButton: 'btn btn-primary',
+            cancelButton: 'btn btn-danger ml-1'
+          }
+          //this.lovService.delete(rec);
+        }).then((result) => {
+          if (result.value) {
+            Swal.fire(
+              'Deleted!',
+              'Your imaginary file has been deleted.',
+              'success'
+            )
+            this.lovService.delete(rec);    
+          } else if (result.dismiss === Swal.DismissReason.cancel) {
+            Swal.fire(
+              'Cancelled',
+              'Your imaginary file is safe :)',
+              'error'
+            )
+          }
+          
+        })
  // }
   }
 
   add() {
    // this.flagAddEdit=true;
+   
     this.lovService.flag=1;
   // console.log(this.lovService.lovdtl);
     this.lovService.lovdtl=undefined;

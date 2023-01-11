@@ -35,7 +35,7 @@
                   [ngClass]="{ 'is-invalid': f.updatedName.touched && f.updatedName.errors,'is-valid' : f.updatedName.touched && f.updatedName.valid }"
                   required />
                 <div *ngIf="f.updatedName.touched && f.updatedName.errors" class="invalid-feedback">
-                  <div *ngIf="f.updatedName.errors.required">{{'LOV.FORM.VALIDATION.UPDATEDNAME' |translate}}</div>
+                  <div *ngIf="f.updatedName.errors.required">{{'Name is required!' |translate}}</div>
                 </div>
               </div>
               
@@ -46,7 +46,7 @@
                   [ngClass]="{ 'is-invalid': f.createdDate.touched && f.createdDate.errors,'is-valid' : f.createdDate.touched && f.createdDate.valid }" required />
   
                 <div *ngIf="f.createdDate.touched && f.createdDate.errors" class="invalid-feedback">
-                  <div *ngIf="f.createdDate.errors.required">{{'LOV.FORM.VALIDATION.CREATEDDATE' |translate}}
+                  <div *ngIf="f.createdDate.errors.required">{{'Date is required!' |translate}}
                   </div>
                 </div>
               </div>
@@ -60,7 +60,7 @@
                       [ngClass]="{ 'is-invalid': f.createdName.touched && f.createdName.errors,'is-valid' : f.createdName.touched && f.createdName.valid }"
                       required />
                     <div *ngIf="f.createdName.touched && f.createdName.errors" class="invalid-feedback">
-                      <div *ngIf="f.createdName.errors.required">{{'LOV.FORM.VALIDATION.CREATENAME' |translate}}</div>
+                      <div *ngIf="f.createdName.errors.required">{{'Name is required!' |translate}}</div>
                     </div>
                   </div> 
 
@@ -83,7 +83,7 @@
                       [ngClass]="{ 'is-invalid': f.parentId.touched && f.parentId.errors,'is-valid' : f.parentId.touched && f.parentId.valid }"
                       required />
                     <div *ngIf="f.parentId.touched && f.parentId.errors" class="invalid-feedback">
-                      <div *ngIf="f.parentId.errors.required">{{'LOV.FORM.VALIDATION.PARENTID' |translate}}</div>
+                      <div *ngIf="f.parentId.errors.required">{{'ParentId is required!' |translate}}</div>
                     </div>
                   </div> 
 
@@ -95,7 +95,7 @@
                       [ngClass]="{ 'is-invalid': f.parentName.touched && f.parentName.errors,'is-valid' : f.parentName.touched && f.parentName.valid }"
                       required />
                     <div *ngIf="f.parentName.touched && f.parentName.errors" class="invalid-feedback">
-                      <div *ngIf="f.parentName.errors.required">{{'LOV.FORM.VALIDATION.PARENTNAME' |translate}}</div>
+                      <div *ngIf="f.parentName.errors.required">{{'Name is required!' |translate}}</div>
                     </div>
                   </div>
 
@@ -115,11 +115,20 @@
               </div>
               <div class="col-md-12 col-12">
                 <div class="form-group">
-                  <button type="submit"  class="btn btn-primary float-right" (click)="onSubmit()">Register</button>
+                  <button type="submit" [swal]="SweetAlertSuccess" (click)="onSubmit()" class="btn btn-primary float-right" rippleEffect>Register</button>
+                 
                   <!-- <button type="button" (click)="onUpdate()" class="btn btn-warning float-right" style="margin-right: 27px;">Update</button> -->
-                  <button type="button" (click)="onCancel()" class="btn btn-warning float-right" style="margin-right: 27px;">
+                  <button type="button" [swal]="SweetAlertSuccess"   (click)="onCancel()" class="btn btn-warning float-right" style="margin-right: 27px;">
                     Cancel
-                  </button>               
+                  </button>  
+                  <swal
+                  #SweetAlertSuccess
+                  title="Good job!"
+                  text="You clicked the button!"
+                  [swalOptions]="{ confirmButtonClass: 'btn btn-primary ' }"
+                  icon="sucess"
+                  >
+                  </swal>             
                 </div>
               </div>
         

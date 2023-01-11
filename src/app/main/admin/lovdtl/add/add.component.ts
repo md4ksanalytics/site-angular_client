@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/fo
 import { Router } from '@angular/router';
 import { CoreTranslationService } from '@core/services/translation.service';
 import { User } from 'app/auth/models';
+import Swal from 'sweetalert2';
 import { Lov } from '../../model/reponse';
 import { locale as en } from '../i18n/en';
 import { LovService } from '../service/lov.service';
@@ -60,33 +61,67 @@ export class AddComponent {
 
   onSubmit(): void { 
     this.userForm.markAllAsTouched();
-    if (!this.userForm.invalid) {
+    if (!this.userForm.valid) {
       return;
     }
-
-    console.log(this.lovService.flag);
-
     if(this.lovService.flag==1){
-      
-      this.lovService.rows.push(this.userForm.value);
-     this.lovService.rowsBackup.push(this.userForm.value);
-      this._router.navigate(['admin/lovdtl']);
-    
+      Swal.fire({
+        title: 'Are you sure?',
+        text: 'Registration.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Registration.',
+        cancelButtonText: 'Cancel',      
+      }).then((result) => {
+        if (result.value) {
+          // this.lo.rows.push(this.organizationForm.value);
+          // this.organizationService.rowsBackup.push(this.organizationForm.value);
+          this.lovService.rows.push(this.userForm.value);
+          this.lovService.rowsBackup.push(this.userForm.value);
+          Swal.fire('Saved!', 'Lov Saved successfully.', 'success');
+          this._router.navigate(['admin/lovdtl']);
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          Swal.fire('Cancelled', 'Lov not Saved', 'error');
+        }
+        // this._router.navigate(['admin/organization']) 
+        // return;
+      });
     }
     else{
+      Swal.fire({
+        title: 'Are you sure?',
+        text: 'Updated.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Edit.',
+        cancelButtonText: 'Cancel',      
+      }).then((result) => {
+        if (result.value) {
+          // this.lo.rows.push(this.organizationForm.value);
+          // this.organizationService.rowsBackup.push(this.organizationForm.value);
+          this.LovDetail=this.userForm.value;
+          let itemIndex=this.lovService.rows.findIndex(item => item.name == this.LovDetail.name);
+          this.lovService.rows[itemIndex]=this.userForm.value;
+          Swal.fire('Saved!', 'Lov Saved successfully.', 'success');
+          this._router.navigate(['admin/lovdtl']);
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          Swal.fire('Cancelled', 'Lov not Saved', 'error');
+        }
+        // this._router.navigate(['admin/organization']) 
+        // return;
+      });
+      // this.LovDetail=this.userForm.value;
+      // let itemIndex=this.lovService.rows.findIndex(item => item.name == this.LovDetail.name);
+      // this.lovService.rows[itemIndex]=this.userForm.value;
+      //this._router.navigate(['admin/lovdtl']);
 
-      this.LovDetail=this.userForm.value;
-      let itemIndex=this.lovService.rows.findIndex(item => item.name == this.LovDetail.name);
-      this.lovService.rows[itemIndex]=this.userForm.value;
-      this._router.navigate(['admin/lovdtl']);
-      
     }
-  
-    
    // this._router.navigate(['admin/lovdtl']);
-
     console.log(JSON.stringify(this.userForm.value, null, 2));
+  
+
   }
+
 
 
   onUpdate():void{
@@ -102,6 +137,10 @@ export class AddComponent {
   onCancel(): void {
    this._router.navigate(['admin/lovdtl'])
   }
+
+  
+  
+
 }
 
 
