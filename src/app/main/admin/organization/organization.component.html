@@ -2,63 +2,61 @@
   <div class="col-md-12 col-sm-12">
     <div class="card">
       <div class="card-body">
-        <h3>{{'USER.GRID.TITLE'  | translate}}</h3>
+        <h3>{{'ORGANIZATION.GRID.TITLE'  | translate}}</h3>
         <hr>
         <div class="row">
           <div class="col-md-3 col-sm-6">
 
             <button type="button" (click)="add()" class="btn btn-outline-primary" rippleEffect>
-              <span [data-feather]="'plus-circle'" [class]="'mr-25'"></span>{{"USER.GRID.ADD" | translate}}</button>
+              <span [data-feather]="'plus-circle'" [class]="'mr-25'"></span>Add Organization</button>
           </div>
           <div class="col-md-3 col-sm-6">
           </div>
           <div class="col-md-3 col-sm-6">
           </div>
           <div class="col-md-3 col-sm-6">
-            <input type="search" placeholder="Search" (keyup)="filterUpdate($event)"
+            <input type="search"  placeholder="Search" (keyup)="filterUpdate($event)"
             class="form-control ml-25"  />
           </div>
         </div>
         <ngx-datatable class="bootstrap core-bootstrap" [columnMode]="'force'" [rowHeight]="'auto'" [limit]="10"
-          [rows]="userService.rows" [count]="userService.rows.length">
-          <ngx-datatable-column name="{{'USER.GRID.NAME' |translate}}" prop="name">
+          [rows]="organizationService.rows" [count]="organizationService.rows.length">
+          <ngx-datatable-column name="{{'ORGANIZATION.GRID.NAME' |translate}}" prop="name">
             <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
               {{row.name}}
             </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="{{'USER.GRID.EMAIL' |translate}}" prop="email">
+          <ngx-datatable-column name="{{'ORGANIZATION.GRID.TYPE' |translate}}" prop="type">
             <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
-              {{row.email}}
+              {{row.type}}
             </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="{{'USER.GRID.MOBILE' |translate}}" prop="mobile">
+          <ngx-datatable-column name="{{'ORGANIZATION.GRID.STATUS' |translate}}" prop="status">
             <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
-              {{row.mobile}}
+              {{row.status}}
             </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="{{'USER.GRID.ROLE' |translate}}" prop="roleName">
+          <ngx-datatable-column name="{{'ORGANIZATION.GRID.UPDATE_DATE' |translate}}" prop="update_date">
             <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
-              {{row.roleName}}
+              {{row.update_date}}
             </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="{{'USER.GRID.organizationName' |translate}}" prop="organizationName">
+          <ngx-datatable-column name="{{'ORGANIZATION.GRID.UPDATED_BY' |translate}}" prop="updated_by">
             <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
-              {{row.organizationName}}
+              {{row.updated_by}}
             </ng-template>
           </ngx-datatable-column>
-
-          <ngx-datatable-column name="{{'USER.GRID.updatedBy' |translate}}" prop="updatedBy">
+          <ngx-datatable-column name="{{'ORGANIZATION.GRID.CREATED_DATE' |translate}}" prop="created_date">
             <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
-              {{row.updatedBy}}
+              {{row.created_date}}
             </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="{{'USER.GRID.UpdateDate' |translate}}" prop="UpdateDate">
+          <ngx-datatable-column name="{{'ORGANIZATION.GRID.CREATED_BY' |translate}}" prop="created_by">
             <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
-              {{row.UpdateDate}}
+              {{row.created_by}}
             </ng-template>
           </ngx-datatable-column>
-
-          <ngx-datatable-column name="{{'USER.GRID.ACTION' |translate}}" prop="id">
+          <ngx-datatable-column name="{{'ORGANIZATION.GRID.ACTION' |translate}}" prop="id">
             <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
               <a (click)="edit(row)"><i  data-feather="edit"></i></a>  |   <a (click)="delete(row)"><i   data-feather="trash"></i></a>
           </ng-template>
@@ -66,5 +64,5 @@
         </ngx-datatable>
       </div>
     </div>
-  </div>
-</div>
+  </div>
+</div> 

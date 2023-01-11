@@ -18,6 +18,8 @@ export class AddComponent
 {
   moduleOpration: ModuleOpration;
   moduleOprationForm: FormGroup;
+  //flagAddEdit:boolean;
+  //flag:boolean;
   moduleOprationDetail=
   {
     name:""
@@ -65,7 +67,7 @@ export class AddComponent
         this._router.navigate(['module-opration']); 
       }
     
-    // this._router.navigate(['module-opration']);
+     //this._router.navigate(['module-opration']);
     console.log(JSON.stringify(this.moduleOprationForm.value, null, 2));
   }
   OnUpdate():void{

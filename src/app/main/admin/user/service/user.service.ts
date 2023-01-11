@@ -10,19 +10,15 @@ export class UserService {
   constructor(private http: HttpCommonService) {
     //sample data
        //sample data
-       this.rows.push({
-         id: "1",
-         email: "g@c.com",
-         name: "g1",
-         mobile: "213123124",
-         roleName: "admin",
-         organizationName: "abc",
-         roleId: "",
-         active: false,
-         organizationId: "",
-         updatedBy: "",
-         UpdateDate: ""
-       });
+      //  this.rows.push({
+      //   id: "1",
+      //   email: "g@c.com",
+      //   name: "g1",
+      //   mobile: "213123124",
+      //   roleName: "admin",
+      //   organizationName:"abc",
+
+      // });
       // this.rows.push({
       //   id: "2",
       //   email: "g2@c.com",

@@ -19,7 +19,7 @@ import { ModuleOpration } from "../model/module-opration.model";
   styleUrls: ["./module-opration.component.scss"],
 })
 export class ModuleOprationComponent implements OnInit{
-   flagAddEdit: boolean;
+   //flagAddEdit: boolean;
   // moduleOprationForm:FormGroup;
   // rowsBackup: any;
   // rows: any;
@@ -45,7 +45,7 @@ export class ModuleOprationComponent implements OnInit{
   }
 
   edit(rec: ModuleOpration) {
-    console.log(rec);
+   // console.log(rec);
    
       this.moduleOprationService.edit(rec);
       this.moduleOprationService.flag = 2;
