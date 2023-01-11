@@ -2,7 +2,7 @@
     <div class="col-md-12 col-sm-12">
       <div class="card">
         <div class="card-body">
-          <h3>{{'MODULEOPRATION.GRID.TITLE'  | translate}}</h3>
+          <h3>{{'MODULEOPERATION.GRID.TITLE'  | translate}}</h3>
           <hr>
           <div class="row">
             <div class="col-md-3 col-sm-6">
@@ -16,22 +16,22 @@
             </div>
             <div class="col-md-3 col-sm-6">
               <input type="search" placeholder="Search" (keyup)="filterUpdate($event)"
-              class="form-control ml-25"  />
+              class="form-control ml-25"/>
             </div>
           </div>
           <ngx-datatable class="bootstrap core-bootstrap" [columnMode]="'force'" [rowHeight]="'auto'" [limit]="10"
-            [rows]="rows" [count]="rows.length">
+         [rows]="moduleOprationService.rows" [count]="moduleOprationService.rows.length">
             <ngx-datatable-column name="{{'NAME' |translate}}" prop="name">
               <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
                 {{row.name}}
               </ng-template>
             </ngx-datatable-column>
-            <ngx-datatable-column name="{{'MODULEOPERATION.GRID.Updated_Date' |translate}}" prop="Updated_Date">
+            <ngx-datatable-column name="{{'MODULEOPERATION.GRID.Updated_Date' | translate}}" prop="Updated_Date">
               <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
                 {{row.Updated_Date}}
               </ng-template>
             </ngx-datatable-column>
-            <ngx-datatable-column name="{{'MODULEOPERATION.GRID.Updated_By'|translate}}" prop=" Updated_By">
+            <ngx-datatable-column name="{{'MODULEOPERATION.GRID.Updated_By'| translate}}" prop=" Updated_By">
               <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
                 {{row. Updated_By}}
               </ng-template>
@@ -46,9 +46,12 @@
                   {{row.Created_By}}
                 </ng-template>
               </ngx-datatable-column>
-            <ngx-datatable-column name="{{'ACTION' |translate}}" prop="id">
+            <ngx-datatable-column name="{{'MODULEOPERATION.GRID.ACTION' |translate}}" prop="id">
               <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
                 <a (click)="edit(row)"><i  data-feather="edit"></i></a>  |   <a (click)="delete(row)"><i   data-feather="trash"></i></a>
+                <!-- <button (click)="OnUpdate()" class="btn btn-warning float-right"></button> -->
+                 <swal #SweetAlertConfirmText (open)="delete()"></swal> 
+
             </ng-template>
             </ngx-datatable-column>
           </ngx-datatable>

@@ -1,0 +1,429 @@
+<div class="row"  >
+  <div class="col-md-12 col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <h3>{{'USER.GRID.TITLE'  | translate}}</h3>
+        <hr>
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+
+            <button type="button" (click)="add()" class="btn btn-outline-primary" rippleEffect>
+              <span [data-feather]="'plus-circle'" [class]="'mr-25'"></span>Add Lov</button>
+          </div>
+          <div class="col-md-3 col-sm-6">
+          </div>
+          <div class="col-md-3 col-sm-6">
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <input type="search" placeholder="Search" (keyup)="filterUpdate($event)"
+            class="form-control ml-25"  />
+          </div>
+        </div>
+        <ngx-datatable class="bootstrap core-bootstrap" [columnMode]="'force'" [rowHeight]="'auto'" [limit]="10"
+          [rows]="rows" [count]="rows.length">
+          <ngx-datatable-column name="{{'USER.GRID.NAME' |translate}}" prop="name">
+            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+              {{row.name}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="{{'USER.GRID.ORGID' |translate}}" prop="Org ID">
+            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+              {{row.Org_Id}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="{{'USER.GRID.UPDATEDNAME' |translate}}" prop="Updated Name">
+            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+              {{row.updatedName}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="{{'USER.GRID.CREATEDDATE' |translate}}" prop="Created Date">
+            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+              {{row.role}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="{{'USER.GRID.CREATEDNAME' |translate}}" prop="Created Name">
+            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+              {{row.role}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="{{'USER.GRID.ACTIVATE' |translate}}" prop="Activate">
+            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+              {{row.role}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="{{'USER.GRID.PARENTID' |translate}}" prop="Parent ID">
+            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+              {{row.role}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="{{'USER.GRID.PARENTNAME' |translate}}" prop="Parent Name">
+            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+              {{row.role}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="{{'USER.GRID.IMPORT' |translate}}" prop="Import">
+            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+              {{row.role}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="{{'USER.GRID.ACTION' |translate}}" prop="id">
+            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+              <a (click)="edit(row)"><i  data-feather="edit"></i></a>  |   <a (click)="delete(row)"><i   data-feather="trash"></i></a>
+          </ng-template>
+          </ngx-datatable-column>
+        </ngx-datatable>
+      </div>
+    </div>
+  </div>
+</div> 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+            
