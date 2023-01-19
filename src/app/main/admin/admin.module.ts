@@ -12,6 +12,8 @@ import { CoreDirectivesModule } from "@core/directives/directives";
 import { UserAddComponent } from "./user/add/user.add.component";
 import { AddComponent } from "./module-opration/add/add.component";
 import { HttpClientModule } from "@angular/common/http";
+import { OrganizationAddComponent } from "./organization/add/organization.add.component";
+import { OrganizationComponent } from "./organization/organization.component";
 // import { LovComponent } from "./llov/lov/lov.component";
 // import { LovdtlComponent } from './llov/lovdtl/lovdtl.component';
 // import { AddComponent } from './llov/lovdtl/add/add.component';
@@ -27,7 +29,7 @@ const routes: Routes = [{ path: "admin/user", component: UserComponent },
 
 { path: "admin/module-opration/edit", component: AddComponent}];
 @NgModule({
-  declarations: [UserComponent,UserAddComponent,ModuleOprationComponent,AddComponent],
+  declarations: [UserComponent,UserAddComponent,OrganizationAddComponent, OrganizationComponent],
   imports: [
     CommonModule, 
     NgbModule,

@@ -1,9 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { CoreTranslationService } from "@core/services/translation.service";
-import { locale as en } from "../i18n/en";
-import { locale as fr } from "../i18n/fr";
-import { locale as de } from "../i18n/de";
-import { locale as pt } from "../i18n/pt";
+
 
 import {  Router } from '@angular/router';
 import {
