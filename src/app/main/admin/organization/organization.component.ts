@@ -7,6 +7,7 @@ import { locale as pt } from "./i18n/pt";
 import { CoreTranslationService } from '@core/services/translation.service';
 import { Organization } from '../model/organization.model';
 import { OrganizationService } from './services/organization.service';
+import Swal from 'sweetalert2';
 
 import {
   
@@ -16,12 +17,16 @@ import {
 
 
 
+
+
 @Component({
   selector: 'app-organization',
   templateUrl: './organization.component.html',
   styleUrls: ['./organization.component.scss']
 }) 
-export class OrganizationComponent {
+export class OrganizationComponent  implements OnInit{
+
+  userList: Array<Organization> = [];
 
   
   constructor(private _coreTranslationService: CoreTranslationService,private formBuilder: FormBuilder,private _router: Router,
@@ -36,10 +41,15 @@ export class OrganizationComponent {
     type:" ",
 
   }
-
+  ngOnInit(): void {
+    this.organizationService.getList(false);
+  }
 
   // ngOnInit(): void {
-  //   this.organizationService.getList(false);
+  //   this.organizationService.findAllOrganization().subscribe(data => {
+  //     this.organizationService.rows = data;
+  //     this.organizationService.rowsBackup = data;
+  //   });
   // }
 
   edit(rec: Organization) {
@@ -49,8 +59,29 @@ export class OrganizationComponent {
     this._router.navigate(['/admin/organization/edit']);
   }
   delete(rec: Organization) {
-    console.log(rec.name);
-    this.organizationService.delete(rec);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'This process is irreversible.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, go ahead.',
+      cancelButtonText: 'No, let me think',
+    }).then((result) => {
+      if (result.value) {
+        this.organizationService.delete(rec);
+        Swal.fire('Removed!', 'Product removed successfully.', 'success');
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire('Cancelled', 'Product still in our database.)', 'error');
+      }
+    });
+  
+    console.log(rec.organizationName);
+    
+     
+   
+      // this.organizationService.delete(rec);
+    
+    // this.organizationService.delete(rec);
   }
   add() {
     

@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { CommonModule } from "@angular/common"; 
 import { ReactiveFormsModule } from "@angular/forms";
 import { UserComponent } from "./user/user.component";
@@ -35,6 +35,7 @@ const routes: Routes = [{ path: "admin/user", component: UserComponent },
 @NgModule({
   declarations: [LovComponent, UserComponent,UserAddComponent, OrganizationComponent, OrganizationAddComponent, LovdtlComponent,AddComponent],
   
+  schemas:[NO_ERRORS_SCHEMA],
   imports: [
     CommonModule, 
     NgbModule,

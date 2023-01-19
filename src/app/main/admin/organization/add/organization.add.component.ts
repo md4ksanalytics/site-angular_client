@@ -15,6 +15,7 @@ import {
 import { OrganizationService } from "../services/organization.service";
 import { Organization } from "../../model/organization.model";
 import { SelectService } from "app/main/service/select.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: "app-organization-add",
@@ -27,7 +28,7 @@ export class OrganizationAddComponent {
   organizationForm: FormGroup; 
 
   orgDetail={
-    name:"",
+    organizationName:"",
     status:"",
     type:""
   }
@@ -41,10 +42,10 @@ export class OrganizationAddComponent {
     this._coreTranslationService.translate(en, fr, de, pt);
 
     this.organizationForm = this.formBuilder.group({
-      name: [this.organizationService.organizationDetail? this.organizationService.organizationDetail.name:"", Validators.required],
+      name: [this.organizationService.organizationDetail? this.organizationService.organizationDetail.organizationName:"", Validators.required],
       type: [this.organizationService.organizationDetail? this.organizationService.organizationDetail.type:"", [Validators.required]],
       status: [this.organizationService.organizationDetail? this.organizationService.organizationDetail.status:"", [Validators.required]],
-      acceptTerms: [false, Validators.requiredTrue],
+      //acceptTerms: [false, Validators.requiredTrue],
     });
   } 
   get f(): { [key: string]: AbstractControl } {
@@ -53,25 +54,75 @@ export class OrganizationAddComponent {
 
   onSubmit(): void { 
     this.organizationForm.markAllAsTouched();
-    if (!this.organizationForm.invalid) {
+  
+    if (this.organizationForm.invalid) {
       return;
       
     }
-    console.log(this.organizationService.xyz);
+      console.log(this.organizationService.xyz);
      
-     if(this.organizationService.xyz==2){
-        this.organizationService.rows.push(this.organizationForm.value);
-      this.organizationService.rowsBackup.push(this.organizationForm.value);
-      this._router.navigate(['admin/organization'])
-      return;
+    if(this.organizationService.xyz==2){
+      
+      Swal.fire({
+        title: 'Are you sure?',
+        text: 'Registration.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Registration.',
+        cancelButtonText: 'Cancel',
+      
+      }).then((result) => {
+        if (result.value) {
+          this.organizationService.rows.push(this.organizationForm.value);
+          this.organizationService.rowsBackup.push(this.organizationForm.value);
+          Swal.fire('Saved!', 'Organization Saved successfully.', 'success');
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          Swal.fire('Cancelled', 'Organization not Saved', 'error');
+        }
+        this._router.navigate(['admin/organization'])
+        
+        return;
+      });
+    
+        
+     
+      //   this.organizationService.rows.push(this.organizationForm.value);
+      // this.organizationService.rowsBackup.push(this.organizationForm.value);
+      // this._router.navigate(['admin/organization'])
+      // return;
+      
      }
+    
      else {
-      this.orgDetail=this.organizationForm.value;
-    console.log(this.organizationForm.value);
-   let itemIndex=this.organizationService.rows.findIndex(item=>item.name==this.organizationService.organizationDetail.name);
-    this.organizationService.rows[itemIndex]=this.organizationForm.value;
-    this._router.navigate(['admin/organization']);
-     }
+      
+      Swal.fire({
+        title: 'Are you sure?',
+        text: 'Update',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Update.',
+        cancelButtonText: 'Cancel',
+        customClass: {
+        confirmButton: 'btn btn-primary',
+        cancelButton: 'btn btn-danger ml-1'
+      }
+      }).then((result) => {
+        if (result.value) {
+          this.orgDetail=this.organizationForm.value;
+          console.log(this.organizationForm.value);
+          let itemIndex=this.organizationService.rows.findIndex(item=>item.organizationName==this.organizationService.organizationDetail.organizationName);
+          this.organizationService.rows[itemIndex]=this.organizationForm.value;
+          Swal.fire('Saved!', 'Organization Updated successfully.', 'success');
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          Swal.fire('Cancelled', 'Organization not Updated.)', 'error');
+        }
+        this._router.navigate(['admin/organization']);
+      });
+    
+      
+   // this._router.navigate(['admin/organization']);
+     
+    }
 
      
     // let itemIndex=null
@@ -101,7 +152,7 @@ export class OrganizationAddComponent {
     // }else{
     //   // this.userService.user.email= 
     // }
-    this._router.navigate(['admin/organization'])
+    //this._router.navigate(['admin/organization'])
 
  
 
@@ -109,9 +160,10 @@ export class OrganizationAddComponent {
   }
   
   onUpdate():void {
+
     this.orgDetail=this.organizationForm.value;
     console.log(this.organizationForm.value);
-   let itemIndex=this.organizationService.rows.findIndex(item=>item.name==this.orgDetail.name);
+   let itemIndex=this.organizationService.rows.findIndex(item=>item.organizationName==this.orgDetail.organizationName);
     this.organizationService.rows[itemIndex]=this.organizationForm.value;
     this._router.navigate(['admin/organization'])
   

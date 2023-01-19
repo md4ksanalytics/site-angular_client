@@ -1,10 +1,10 @@
 export interface Organization{
     id:string;
-    name: string;
+    organizationName: string;
     type:string;
-    update_date:string;
-    updated_by:string;
-    created_by:string;
+    updateDate:string;
+    updatedBy:string;
+    createdBy:string;
     created_date:string;
     status: string;
 

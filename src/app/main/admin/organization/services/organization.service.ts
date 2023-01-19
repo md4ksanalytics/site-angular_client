@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpCommonService } from 'app/main/service/http.common.servce';
+import { environment } from 'environments/environment';
+import { Observable } from 'rxjs';
 import { Organization } from '../../model/organization.model';
 
+const API_URL = environment.BASE_URL + '/secure/admin/organization';
 
 @Injectable({
   providedIn: 'root'
@@ -51,16 +54,19 @@ export class OrganizationService {
    public getList(force: boolean) {
     if (force || this.rows.length == 0) {
       this.http
-        .getWithoutError("organization", "/list")
-        .subscribe((list: Array<Organization>) =>   {
+        .getWithoutError("organizqation", "/list")
+        .subscribe((list: Array<Organization>) => {
           this.rows = list;
-           this.rowsBackup=list;
+          this.rowsBackup=list;
         });
     }
   }
+  public findAllOrganization(): Observable<any> {
+    return this.http.get(API_URL+'/list')
+  }
   public save(organization:Organization) {   
     return  this.http
-        .postWithoutError("organization", "/save",organization);
+        .postWithoutError(API_URL, "/save",organization);
          
     
   }
@@ -71,9 +77,10 @@ export class OrganizationService {
   public delete(organization:Organization) {   
     // return this.http
     //   .getWithoutError("organization", "/delete/"+organization.name);
-      this.rows=this.rows.filter(item=>item.name!==organization.name)
+    this.rowsBackup=this.rowsBackup.filter(item=>item.organizationName!==organization.organizationName)
+      this.rows=this.rows.filter(item=>item.organizationName!==organization.organizationName)
       return this.http
-      .getWithoutError("organization", "/delete/"+organization.name);
+      .getWithoutError("organization", "/delete/"+organization.organizationName);
   
 }
 }
