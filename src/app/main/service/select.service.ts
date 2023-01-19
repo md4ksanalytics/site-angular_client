@@ -19,7 +19,7 @@ export class SelectService {
   public mapSelect = new Map<string, Array<SelectList>>();
   constructor(private http: HttpCommonService) {}
 
-  /**
+  /****
    * Get all domain
    */
   getSelect(name: string) {
