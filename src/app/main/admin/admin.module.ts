@@ -29,6 +29,7 @@ const routes: Routes = [{ path: "admin/user", component: UserComponent },
 {path:"admin/lovdtl", component:LovdtlComponent},
 {path:"admin/lovdtl/edit",component:AddComponent},
 {path:"admin/lovdtl/add", component:AddComponent}
+]
 
 
 // const routes: Routes = [
@@ -48,7 +49,7 @@ const routes: Routes = [{ path: "admin/user", component: UserComponent },
 // ];
 
 @NgModule({
-  declarations: [LovComponent, UserComponent,UserAddComponent,LovdtlComponent, AddComponent],
+  declarations: [LovComponent, UserComponent,UserAddComponent,LovdtlComponent, AddComponent,AddmenuComponent,MenuselectComponent],
  // schemas:[NO_ERRORS_SCHEMA],
   imports: [
     CommonModule, 
