@@ -89,27 +89,27 @@ export class AddComponent {
     }
     else{
       Swal.fire({
-        title: 'Are you sure?',
-        text: 'Updated.',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Edit.',
-        cancelButtonText: 'Cancel',      
-      }).then((result) => {
-        if (result.value) {
+        title: 'Done',
+       // text: 'Done',
+        icon: 'success',
+     //   showCancelButton: true,
+      //  confirmButtonText: 'Edit.',
+        //cancelButtonText: 'Cancel',      
+      })//.then((result) => {
+       // if (result.value) {
           // this.lo.rows.push(this.organizationForm.value);
           // this.organizationService.rowsBackup.push(this.organizationForm.value);
           this.LovDetail=this.userForm.value;
           let itemIndex=this.lovService.rows.findIndex(item => item.name == this.LovDetail.name);
           this.lovService.rows[itemIndex]=this.userForm.value;
-          Swal.fire('Saved!', 'Lov Saved successfully.', 'success');
+          // Swal.fire('Saved!', 'Lov Saved successfully.', 'success');
           this._router.navigate(['admin/lovdtl']);
-        } else if (result.dismiss === Swal.DismissReason.cancel) {
-          Swal.fire('Cancelled', 'Lov not Saved', 'error');
-        }
+        // } else if (result.dismiss === Swal.DismissReason.cancel) {
+        //   Swal.fire('Cancelled', 'Lov not Saved', 'error');
+        // }
         // this._router.navigate(['admin/organization']) 
         // return;
-      });
+     // });
       // this.LovDetail=this.userForm.value;
       // let itemIndex=this.lovService.rows.findIndex(item => item.name == this.LovDetail.name);
       // this.lovService.rows[itemIndex]=this.userForm.value;

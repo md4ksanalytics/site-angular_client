@@ -19,6 +19,7 @@ export class HttpCommonService {
     console.log(auth);
     this.urlMap.set("user", "/secure/admin/user");
     this.urlMap.set("role", "/secure/admin/role");
+    
     this.urlMap.set("organization", "/secure/admin/organization");
   }
 

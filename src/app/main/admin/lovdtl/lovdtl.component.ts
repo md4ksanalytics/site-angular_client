@@ -23,6 +23,10 @@ export class LovdtlComponent {
     this._coreTranslationService.translate(en);
   }
 
+  ngOnInit(): void {
+    this.lovService.getList(false);
+  }
+
 
   edit(rec: Lov) {
     //get the all lov based on 

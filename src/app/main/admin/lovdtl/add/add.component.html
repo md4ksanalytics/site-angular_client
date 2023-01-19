@@ -18,7 +18,7 @@
               </div>
               <div class="col-sm-6 col-12">
                 <label>{{'LOV.FORM.ORGID' | translate}} </label>
-                <input formControlName="Org_Id" type="text" class="form-control" placeholder="Org_Id"
+                <input formControlName="Org_Id" type="number" class="form-control" placeholder="Org_Id"
                   [ngClass]="{ 'is-invalid': f.Org_Id.touched && f.Org_Id.errors,'is-valid' : f.Org_Id.touched && f.Org_Id.valid }"
                   required />
                 <div *ngIf="f.Org_Id.touched && f.Org_Id.errors" class="invalid-feedback">
@@ -42,7 +42,7 @@
   
               <div class="col-sm-6 col-12">
                 <label>{{'LOV.FORM.CREATEDDATE' | translate}} </label>
-                <input type="Date" formControlName="createdDate" class="form-control" placeholder="Date"
+                <input type="date" formControlName="createdDate" class="form-control" placeholder="Date"
                   [ngClass]="{ 'is-invalid': f.createdDate.touched && f.createdDate.errors,'is-valid' : f.createdDate.touched && f.createdDate.valid }" required />
   
                 <div *ngIf="f.createdDate.touched && f.createdDate.errors" class="invalid-feedback">
@@ -88,6 +88,7 @@
                   </div> 
 
                  
+                  <div class="col-md-12 col-12" style="padding: 10px;"></div> 
 
                    <div class="col-sm-6 col-12">
                     <label>{{'LOV.FORM.PARENTNAME' | translate}}</label> 
@@ -99,7 +100,6 @@
                     </div>
                   </div>
 
-                  <div class="col-md-12 col-12" style="padding: 10px;"></div> 
 
                    <!-- <div class="col-sm-6 col-12">
                     <label>{{'LOV.FORM.IMPORT' | translate}}</label>

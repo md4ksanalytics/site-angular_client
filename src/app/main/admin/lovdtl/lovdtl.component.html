@@ -47,11 +47,11 @@
               {{row.createdName}}
             </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="{{'LOV.GRID.ACTIVATE' |translate}}" prop="activate">
+          <!-- <ngx-datatable-column name="{{'LOV.GRID.ACTIVATE' |translate}}" prop="activate">
             <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
               {{row.activate}}
             </ng-template>
-          </ngx-datatable-column> 
+          </ngx-datatable-column>  -->
           <ngx-datatable-column name="{{'LOV.GRID.PARENTID' |translate}}" prop="Parent ID">
             <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
               {{row.parentId}}
@@ -62,11 +62,11 @@
               {{row.parentName}}
             </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="{{'LOV.GRID.IMPORT' |translate}}" prop="Import">
+          <!-- <ngx-datatable-column name="{{'LOV.GRID.IMPORT' |translate}}" prop="Import">
             <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
               {{row.import}}
             </ng-template>
-          </ngx-datatable-column>
+          </ngx-datatable-column> -->
           <ngx-datatable-column name="{{'LOV.GRID.ACTION' |translate}}" prop="id">
             <ng-template let-row="row" ngx-datatable-cell-template let-value="value" >
               <a (click)="edit(row)"><i  data-feather="edit"></i></a>  |   <a (click)="delete(row)" ><i   data-feather="trash" ></i>
