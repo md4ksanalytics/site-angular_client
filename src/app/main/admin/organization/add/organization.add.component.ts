@@ -6,7 +6,8 @@ import { locale as de } from "../i18n/de";
 import { locale as pt } from "../i18n/pt";
 
 import {  Router } from '@angular/router';
-import { AbstractControl,FormBuilder,FormGroup,Validators,} from "@angular/forms";
+
+import { AbstractControl, FormBuilder,FormGroup,Validators} from "@angular/forms";
 import { OrganizationService } from "../services/organization.service";
 import { Organization } from "../../model/organization.model";
 import { SelectService } from "app/main/service/select.service";
@@ -69,6 +70,39 @@ export class OrganizationAddComponent {
      }
 
     this._router.navigate(['admin/organization'])
+     
+    // let itemIndex=null
+    // itemIndex=this.organizationService.rows.findIndex(item=>item.name==this.orgDetail.name);
+    // console.log(itemIndex)
+    // if(itemIndex!=-1)
+    // {
+    //   console.log(itemIndex)
+    //   this.organizationService.rows[itemIndex]=this.organizationForm.value;
+    // this._router.navigate(['admin/organization'])
+    // return;
+    // }
+
+    // else {
+      
+    //   this.organizationService.rows.push(this.organizationForm.value);
+    //   this.organizationService.rowsBackup.push(this.organizationForm.value);
+    //   this._router.navigate(['admin/organization'])
+    // }
+
+    
+    
+    
+    // if(!this.organizationService.organization){
+    //   this.organizationService.rows.push(this.organizationForm.value);
+
+    // }else{
+    //   // this.userService.user.email= 
+    // }
+    this._router.navigate(['admin/organization'])
+
+ 
+
+   // console.log(JSON.stringify(this.organizationForm.value, null, 2));
   }
   
   onUpdate():void {

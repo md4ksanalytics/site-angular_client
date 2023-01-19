@@ -1,0 +1,142 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h3>{{lovdtl? ('LOV.FORM.TITLEADD'  | translate) : ('LOV.FORM.TITLEEDIT'  | translate)}}</h3>
+          <hr>
+          <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  
+            <div class="row match-height">
+               <div class="col-sm-6 col-12">
+                <label> {{'LOV.FORM.NAME' | translate}}</label>
+                <input formControlName="name" type="text" class="form-control" placeholder="Name"
+                  [ngClass]="{ 'is-invalid': f.name.touched && f.name.errors,'is-valid' : f.name.touched && f.name.valid }"
+                  required />
+                <div *ngIf="f.name.touched && f.name.errors" class="invalid-feedback">
+                  <div *ngIf="f.name.errors.required">{{'LOV.FORM.VALIDATION.NAME' | translate}} </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-12">
+                <label>{{'LOV.FORM.ORGID' | translate}} </label>
+                <input formControlName="Org_Id" type="number" class="form-control" placeholder="Org_Id"
+                  [ngClass]="{ 'is-invalid': f.Org_Id.touched && f.Org_Id.errors,'is-valid' : f.Org_Id.touched && f.Org_Id.valid }"
+                  required />
+                <div *ngIf="f.Org_Id.touched && f.Org_Id.errors" class="invalid-feedback">
+                  <div *ngIf="f.Org_Id.errors.required">{{'LOV.FORM.VALIDATION.ORGID' |translate}}</div>
+                </div>
+              </div>
+  
+              <div class="col-md-12 col-12" style="padding: 10px;">
+  
+              </div>
+              <div class="col-sm-6 col-12">
+                <label>{{'LOV.FORM.UPDATEDNAME' | translate}}</label>
+                <input formControlName="updatedName" type="text" class="form-control" placeholder="Updated Name"
+                  [ngClass]="{ 'is-invalid': f.updatedName.touched && f.updatedName.errors,'is-valid' : f.updatedName.touched && f.updatedName.valid }"
+                  required />
+                <div *ngIf="f.updatedName.touched && f.updatedName.errors" class="invalid-feedback">
+                  <div *ngIf="f.updatedName.errors.required">{{'Name is required!' |translate}}</div>
+                </div>
+              </div>
+              
+  
+              <div class="col-sm-6 col-12">
+                <label>{{'LOV.FORM.CREATEDDATE' | translate}} </label>
+                <input type="date" formControlName="createdDate" class="form-control" placeholder="Date"
+                  [ngClass]="{ 'is-invalid': f.createdDate.touched && f.createdDate.errors,'is-valid' : f.createdDate.touched && f.createdDate.valid }" required />
+  
+                <div *ngIf="f.createdDate.touched && f.createdDate.errors" class="invalid-feedback">
+                  <div *ngIf="f.createdDate.errors.required">{{'Date is required!' |translate}}
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-12" style="padding: 10px;"></div> 
+
+               
+
+                   <div class="col-sm-6 col-12">
+                    <label>{{'LOV.FORM.CREATEDNAME' | translate}}</label>
+                    <input formControlName="createdName" type="text" class="form-control" placeholder="Created Name"
+                      [ngClass]="{ 'is-invalid': f.createdName.touched && f.createdName.errors,'is-valid' : f.createdName.touched && f.createdName.valid }"
+                      required />
+                    <div *ngIf="f.createdName.touched && f.createdName.errors" class="invalid-feedback">
+                      <div *ngIf="f.createdName.errors.required">{{'Name is required!' |translate}}</div>
+                    </div>
+                  </div> 
+
+                  <!-- <div class="col-sm-6 col-12">
+                    <label>{{'LOV.FORM.ACTIVATE' | translate}}</label>
+                    <input formControlName="activate" type="text" class="form-control" placeholder="Activate"
+                      [ngClass]="{ 'is-invalid': f.activate.touched && f.activate.errors,'is-valid' : f.activate.touched && f.activate.valid }"
+                      required />
+                    <div *ngIf="f.activate.touched && f.activate.errors" class="invalid-feedback">
+                      <div *ngIf="f.activate.errors.required">{{'LOV.FORM.VALIDATION.ACTIVATE' |translate}}</div>
+                    </div>
+                  </div> -->
+
+                  <!-- <div class="col-md-12 col-12" style="padding: 10px;"></div> -->
+
+
+                  <div class="col-sm-6 col-12">
+                    <label>{{'LOV.FORM.PARENTID' | translate}}</label>
+                    <input formControlName="parentId" type="number" class="form-control" placeholder="Parent Id"
+                      [ngClass]="{ 'is-invalid': f.parentId.touched && f.parentId.errors,'is-valid' : f.parentId.touched && f.parentId.valid }"
+                      required />
+                    <div *ngIf="f.parentId.touched && f.parentId.errors" class="invalid-feedback">
+                      <div *ngIf="f.parentId.errors.required">{{'ParentId is required!' |translate}}</div>
+                    </div>
+                  </div> 
+
+                 
+                  <div class="col-md-12 col-12" style="padding: 10px;"></div> 
+
+                   <div class="col-sm-6 col-12">
+                    <label>{{'LOV.FORM.PARENTNAME' | translate}}</label> 
+                    <input formControlName="parentName" type="text" class="form-control" placeholder="Parent Name"
+                      [ngClass]="{ 'is-invalid': f.parentName.touched && f.parentName.errors,'is-valid' : f.parentName.touched && f.parentName.valid }"
+                      required />
+                    <div *ngIf="f.parentName.touched && f.parentName.errors" class="invalid-feedback">
+                      <div *ngIf="f.parentName.errors.required">{{'Name is required!' |translate}}</div>
+                    </div>
+                  </div>
+
+
+                   <!-- <div class="col-sm-6 col-12">
+                    <label>{{'LOV.FORM.IMPORT' | translate}}</label>
+                    <input formControlName="import" type="text" class="form-control" placeholder="Import"
+                      [ngClass]="{ 'is-invalid': f.import.touched && f.import.errors,'is-valid' : f.import.touched && f.import.valid }"
+                      required />
+                    <div *ngIf="f.import.touched && f.import.errors" class="invalid-feedback">
+                      <div *ngIf="f.import.errors.required">{{'LOV.FORM.VALIDATION.IMPORT' |translate}}</div>
+                    </div>
+                  </div>   -->
+                  
+   
+              </div>
+              <div class="col-md-12 col-12">
+                <div class="form-group">
+                  <button type="submit" (click)="onSubmit()" class="btn btn-primary float-right" rippleEffect>Register</button>
+                 
+                  <!-- <button type="button" (click)="onUpdate()" class="btn btn-warning float-right" style="margin-right: 27px;">Update</button> -->
+                  <button type="button" (click)="onCancel()" class="btn btn-warning float-right" style="margin-right: 27px;">
+                    Cancel
+                  </button>  
+                  <!-- <swal
+                  #SweetAlertSuccess
+                  title="Good job!"
+                  text="You clicked the button!"
+                  [swalOptions]="{ confirmButtonClass: 'btn btn-primary ' }"
+                  icon="sucess"
+                  >
+                  </swal>              -->
+                </div>
+              </div>
+        
+          </form>
+        </div>
+      </div>
+  
+  
+  
+    </div>
+  

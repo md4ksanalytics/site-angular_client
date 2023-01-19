@@ -20,6 +20,7 @@ export class HttpCommonService {
     console.log(auth);
     this.urlMap.set("user", "/secure/admin/user");
     this.urlMap.set("role", "/secure/admin/role");
+    
     this.urlMap.set("organization", "/secure/admin/organization");
     this.urlMap.set("menu", "/secure/admin/menu"); 
   }
@@ -49,8 +50,8 @@ export class HttpCommonService {
   }
 
   getWithoutError(mainUrl: string, url: string): Observable<any> {
-    return this._http.get<any>(environment.apiUrl+ this.urlMap.get(mainUrl)+  url).pipe(
-      map((response: ResponseRet<any>) => response),
+    return this._http.get<any>(environment.apiUrl+this.urlMap.get(mainUrl)+  url).pipe(
+      map((response: ResponseRet<any>) => response.message),
       catchError((err: HttpErrorResponse) => this.handleEmptyError(err))
     );
   }
