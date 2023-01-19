@@ -7,7 +7,7 @@
         <div class="row">
           <div class="col-md-3 col-sm-6">
 
-            <button type="button" (click)="onSelectmenu()" class="btn btn-outline-primary" rippleEffect>
+            <button type="button" (click)="add()" class="btn btn-outline-primary" rippleEffect>
               <span [data-feather]="'plus-circle'" [class]="'mr-25'"></span>ADD MENU</button>
           </div>
           <div class="col-md-3 col-sm-6">
@@ -20,11 +20,12 @@
           </div>
         </div>
         <ngx-datatable class="bootstrap core-bootstrap" [columnMode]="'force'" [rowHeight]="'auto'" [limit]="10"
-          [rows]="rows" [count]="rows.length">
+          [rows]="menuserviceService.rows" [count]="menuserviceService.rows.length">
            <ngx-datatable-column name="{{'MENU.GRID.NAME' |translate}}" prop="name">
                 <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
                   {{row.name}}
-                </ng-template>
+                </ng-template>\
+                
               </ngx-datatable-column>
             <ngx-datatable-column name="{{'MENU.GRID.PARENT_MENU' |translate}}" prop="parent_menu">
                   <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
@@ -68,7 +69,7 @@
           </ngx-datatable-column>
           <ngx-datatable-column name="{{'MENU.GRID.ACTION' |translate}}" prop="id" > 
                   <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
-                    <a (click)="edit(row)" *ngIf="!edit(row)"><i  data-feather="edit" ></i></a>  |   <a (click)="delete(row)" *ngIf="!delete(row)"><i data-feather="trash"></i></a>
+                    <a (click)="edit(row)"><i data-feather="edit"></i></a>  | <a (click)="delete(row)"><i data-feather="trash"></i></a>
                 </ng-template>
           </ngx-datatable-column>       
         </ngx-datatable>

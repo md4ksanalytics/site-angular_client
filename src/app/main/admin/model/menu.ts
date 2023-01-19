@@ -9,6 +9,7 @@ export interface Menu {
     created_by:String;  
     parent_menu:String;
     url:String;
+    accept_terms:String;
 }
     
   

@@ -46,7 +46,6 @@ export const menu: CoreMenu[] =
         type: "item",
         translate: "MENU.Lov",
         icon: "list",
-<<<<<<< HEAD
         url: "admin/lov",
       },{
         id: "Menu",
@@ -55,10 +54,8 @@ export const menu: CoreMenu[] =
         icon: "list",
         translate: "MENU.Menu",
         url: "admin/addmenu",
-=======
-        url: "admin/llov/lov",
->>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client
+        
       },
     ],
   },
-  ];
+];
