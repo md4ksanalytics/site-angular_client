@@ -3,9 +3,11 @@ import { NO_ERRORS_SCHEMA } from "@angular/core";
 
 import { Component, CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common"; 
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 import { UserComponent } from "./user/user.component";
 import { RouterModule, Routes } from "@angular/router";
+import { FormsModule } from "@angular/forms";
+//import { ModuleOprationComponent } from "./module-opration/module-opration.component";
 import { CoreCardModule } from "@core/components/core-card/core-card.module";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { TranslateModule } from "@ngx-translate/core";
@@ -64,6 +66,5 @@ const routes: Routes = [{ path: "admin/user", component: UserComponent },
     FormsModule
     
   ],
-  schemas:[NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AdminModule {}
