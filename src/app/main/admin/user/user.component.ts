@@ -36,6 +36,7 @@ export class UserComponent implements OnInit {
     this.userService.user=undefined;
     this._router.navigate(['/admin/user/add']);
   }
+  searchText="";
 
   filterUpdate(event) {
     const val = event.target.value.toLowerCase();

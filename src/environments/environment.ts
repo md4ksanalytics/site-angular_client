@@ -10,7 +10,8 @@ export const environment = {
   appTitle:"Site",
   hmr: false,
    apiUrl: 'http://localhost:8001/logs-monitoring-api', 
-  // BASIC_URL:'http://localhost:9001/',
+   BASIC_URL:'http://localhost:9001',
+   //apiUrl: 'http://localhost:9001', 
    apiAuditUrl: 'http://localhost:8001/logs-monitoring-api/audit', 
   apiRegistryUrl: 'http://localhost:8002/logs-monitoring-api/registry', 
   production:true,
@@ -27,7 +28,7 @@ export const environment = {
 
   
 };
-
+//
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

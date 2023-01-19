@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <h3>{{menu? ('MENU.FORM.TITLEADD'  | translate) : ('MENU.FORM.TITLEEDIT'  | translate)}}</h3>
+        <hr>
+        <form [formGroup]="selectForm" (ngSubmit)="onSubmit()" >
+            <div class="row match-height">
+            <div class="col-sm-6 col-12">
+              <label> {{'MENU.FORM.NAME' | translate}}</label>
+              <input formControlName="name" type="text" class="form-control"  placeholder="Enter Menu" 
+                [ngClass]="{ 'is-invalid': f.name.touched && f.name.errors,'is-valid' : f.name.touched && f.name.valid }"
+                required />
+              <div *ngIf="f.name.touched && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">{{'MENU.FORM.VALIDATION.NAME' | translate}} </div>
+              </div>
+          </div>
+
+            <div class="col-sm-6 col-12">
+              <label>{{'MENU.FORM.PARENT_MENU' |translate}} </label>
+              <input list="menu" formControlName="parent_menu" type="text" class="form-control"  placeholder="select" 
+                [ngClass]="{ 'is-invalid': f.parent_menu.touched && f.parent_menu.errors,'is-valid' : f.parent_menu.touched && f.parent_menu.valid }"
+                required />
+                <datalist id="menu">
+                  <option value="Admin Module Group">
+                  <option value="Vendor Module Group">
+                  <option value="Client Module Group">
+                  <option value="User Module Group">
+                  </datalist>
+              <div *ngIf="f.parent_menu.touched && f.parent_menu.errors" class="invalid-feedback">
+                <div *ngIf="f.parent_menu.errors.required">{{'MENU.FORM.VALIDATION.PARENT_MENU' |translate}}</div>
+              </div>
+            </div>
+            <div class="col-md-12 col-12" style="padding: 10px;">
+          </div>
+
+            <div class="col-sm-6 col-12">
+              <label>{{'MENU.FORM.URL' |translate}}</label>
+              <input formControlName="url" type="text" class="form-control"  placeholder="url"
+                [ngClass]="{ 'is-invalid': f.url.touched && f.url.errors,'is-valid' : f.url.touched && f.url.valid }"
+                required />
+              <div *ngIf="f.url.touched && f.url.errors" class="invalid-feedback">
+                <div *ngIf="f.url.errors.required">{{'MENU.FORM.VALIDATION.URL' |translate}}</div>
+              </div>
+            </div>
+                      
+            <div class="col-md-12 col-12" style="padding: 10px;">
+             </div>
+            <div class="col-md-12 col-12">
+              <div class="form-group">
+                <button type="submit"  class="btn btn-primary float-right" [swal]="SweetAlertSuccess" style="margin-left: 27px;" rippleEffect>Save</button>
+                <swal
+                      #SweetAlertSuccess
+                      title="Good job!"
+                      text="info added succesfully!"
+                      [swalOptions]="{ confirmButtonClass: 'btn btn-primary' }"
+                      icon="success"
+                      
+                    >
+                    </swal> 
+                
+                <!-- <button type="button"  (click)="onUpdate()"  class="btn btn-primary float-right"  >Update</button> -->
+                <button type="button" (click)="onCancel()" class="btn btn-warning float-right" style="margin-right: 2px;">
+                  Cancel
+                </button>               
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+

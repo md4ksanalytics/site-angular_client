@@ -1,9 +1,9 @@
 import { environment } from "environments/environment";
 
-export const locale = {
-  lang: "en",
-  data: {
-        MENU: {
+    export const locale = {
+      lang: "en",
+    data:{
+    MENU: {
       GRID: {
         TITLE: "Manage Menu",
         NAME: "Name",
@@ -42,5 +42,6 @@ export const locale = {
           },
       },
     },
-  },
-};
+  }
+
+    }
