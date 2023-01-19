@@ -24,7 +24,6 @@ import { environment } from '../environments/environment';
 import { HomeComponent } from './main/logs/home.component'; 
 import { JwtAuthInterceptor } from './auth/helpers';
 import { AdminModule } from './main/admin/admin.module';
-
  
 
 const appRoutes: Routes = [

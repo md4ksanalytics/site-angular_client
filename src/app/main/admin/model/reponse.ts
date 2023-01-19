@@ -8,7 +8,6 @@
     
   }
 
-  
   export interface Lov {
     id:string;
     name: string;

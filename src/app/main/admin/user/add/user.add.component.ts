@@ -6,6 +6,7 @@ import { locale as de } from "../i18n/de";
 import { locale as pt } from "../i18n/pt";
 
 import {  Router } from '@angular/router';
+
 import {
   AbstractControl,
   FormBuilder,
@@ -15,6 +16,9 @@ import {
 import { SelectService } from "app/main/service/select.service";
 import { UserService } from "../service/user.service";
 import { User } from "../../model/user.model";
+
+// import { User } from "app/auth/models";
+// import { User } from "../../model/user.model";
 
 @Component({
   selector: "app-user-add",
@@ -45,7 +49,7 @@ export class UserAddComponent {
     });
   }
 
-  get f(): { [key: string]: AbstractControl } {
+  get f(): {[key: string]: AbstractControl } {
     return this.userForm.controls;
   }
 
@@ -74,4 +78,5 @@ export class UserAddComponent {
   onCancel(): void {
    this._router.navigate(['admin/user'])
   }
+  
 }

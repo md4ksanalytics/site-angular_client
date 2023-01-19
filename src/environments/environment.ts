@@ -9,7 +9,10 @@ export const environment = {
 
   appTitle:"Site",
   hmr: false,
+<<<<<<< HEAD
   BASE_URL: 'http://localhost:9001',
+=======
+>>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client.git
    apiUrl: 'http://localhost:9001', 
    apiAuditUrl: 'http://localhost:8001/logs-monitoring-api/audit', 
   apiRegistryUrl: 'http://localhost:8002/logs-monitoring-api/registry', 
@@ -27,7 +30,7 @@ export const environment = {
 
   
 };
-
+//
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

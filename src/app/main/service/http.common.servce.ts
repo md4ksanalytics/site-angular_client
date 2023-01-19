@@ -21,6 +21,7 @@ export class HttpCommonService {
     this.urlMap.set("user", "/secure/admin/user");
     this.urlMap.set("role", "/secure/admin/role");
     this.urlMap.set("organization", "/secure/admin/organization");
+    this.urlMap.set("menu", "/secure/admin/menu"); 
   }
 
   handleError(err: HttpErrorResponse): Observable<ResponseRet<any>> {
@@ -48,8 +49,13 @@ export class HttpCommonService {
   }
 
   getWithoutError(mainUrl: string, url: string): Observable<any> {
+<<<<<<< HEAD
     return this._http.get<any>(environment.apiUrl+this.urlMap.get(mainUrl)+  url).pipe(
       map((response: ResponseRet<any>) => response.message),
+=======
+    return this._http.get<any>(environment.apiUrl+ this.urlMap.get(mainUrl)+  url).pipe(
+      map((response: ResponseRet<any>) => response),
+>>>>>>> branch 'main' of https://github.com/md4ksanalytics/site-angular_client.git
       catchError((err: HttpErrorResponse) => this.handleEmptyError(err))
     );
   }
@@ -69,3 +75,4 @@ export class HttpCommonService {
     );
   }
 }
+//

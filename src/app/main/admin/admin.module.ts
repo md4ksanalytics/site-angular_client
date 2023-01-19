@@ -35,7 +35,6 @@ const routes: Routes = [{ path: "admin/user", component: UserComponent },
 @NgModule({
   declarations: [LovComponent, UserComponent,UserAddComponent, OrganizationComponent, OrganizationAddComponent, LovdtlComponent,AddComponent],
   
-  schemas:[NO_ERRORS_SCHEMA],
   imports: [
     CommonModule, 
     NgbModule,
