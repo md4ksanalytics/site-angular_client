@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { locale as en } from '../menumodel/i18n/en';
-import { locale as fr } from '../menumodel/i18n/fr';
-import { locale as de } from '../menumodel/i18n/de';
-import { locale as pt } from '../menumodel/i18n/pt';
+import { locale as en } from './i18n/en';
+import { locale as fr } from './i18n/fr';
+import { locale as de } from './i18n/de';
+import { locale as pt } from './i18n/pt';
 import { Menu } from '../model/menu';
 import {  Router } from '@angular/router';
 import { MenuserviceService } from 'app/main/admin/menumodel/menuservice/menuservice.service';
@@ -10,9 +10,9 @@ import { CoreTranslationService } from '@core/services/translation.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-addmenu',
-  templateUrl: './addmenu.component.html',
-  styleUrls: ['./addmenu.component.scss']
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss']
 })
 export class AddmenuComponent implements OnInit {
 

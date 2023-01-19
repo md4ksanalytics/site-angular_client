@@ -11,8 +11,8 @@ import { TranslateModule } from "@ngx-translate/core";
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import { CoreDirectivesModule } from "@core/directives/directives";
 import { UserAddComponent } from "./user/add/user.add.component";
-import { AddmenuComponent } from "./menumodel/addmenu.component";
-import { MenuselectComponent } from "./menumodel/selectmenu/menuselect.component";
+import { AddmenuComponent } from "./menumodel/menu.component";
+import { MenuselectComponent } from "./menumodel/selectmenu/addmenu.component";
 
 import { HttpClientModule } from "@angular/common/http";
 import { ModuleOprationComponent } from "./module-opration/module-opration.component";

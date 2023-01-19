@@ -1,82 +1,61 @@
-<div class="card">
-    <form formGroup="userForm">
-        <div class="mt-5">
-       <div class="form-row">
-         <div class="col-md-12">
-            <div class="form-group">
-                <label>UpdatedDate</label>
+<!-- <div class="row"  >
+    <div class="col-md-12 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h3>{{'MODULEOPERATION.GRID.TITLE'  | translate}}</h3>
+          <hr>
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+  
+              <button type="button" (click)="add()" class="btn btn-outline-primary" rippleEffect>
+                <span [data-feather]="'plus-circle'" [class]="'mr-25'"></span>Add opration</button>
             </div>
-            <div class="form-row">
-                <div class="col">
-                    <input type="text" formControlName="UpdatedDate" class="form-control" placeholder="UpdatedDate">
-                </div>
+            <div class="col-md-3 col-sm-6">
             </div>
-         </div>
-         <div class="col-md-12">
-            <div class="form-group">
-                <label>UpdatedBy</label>
+            <div class="col-md-3 col-sm-6">
             </div>
-            <div class="form-row">
-                <div class="col">
-                    <input type="text" formControlName="UpdatedBy" class="form-control" placeholder="UpdatedBy">
-                </div>
+            <div class="col-md-3 col-sm-6">
+              <input type="search" placeholder="Search" (keyup)="filterUpdate($event)"
+              class="form-control ml-25"/>
             </div>
-         </div>
-         <div class="col-md-12">
-            <div class="form-group">
-                <label>CreatedDate</label>
-            </div>
-            <div class="form-row">
-                <div class="col">
-                    <input type="text" formControlName="CreatedDate" class="form-control" placeholder="CreatedDate">
-                </div>
-            </div>
-         </div>
-         <div class="col-md-12">
-            <div class="form-group">
-                <label>CreatedBy</label>
-            </div>
-            <div class="form-row">
-                <div class="col">
-                    <input type="text" formControlName="CreatedBy" class="form-control" placeholder="CreatedBy">
-                </div>
-            </div>
-         </div>
-         <div class="form-row mt-4">
-            <div class="col-md-6">
-                <button type="button" class="btn btn-primary" (click)="addItem()">Add</button>&nbsp;
-                <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
-            </div>
-            <div class="col-md-8 mt-4 mb-4">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>UpdatedDate</th>
-                            <th>UpdatedBy</th>
-                            <th>CreatedDate</th>
-                            <th>UpdatedBy</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let item of listData">
-                            <td><span>{{item.UpdatedDate}}</span></td>
-                            <td><span>{{item.UpdatedBy}}</span></td>
-                            <td><span>{{item.CreatedDate}}</span></td>
-                            <td><span>{{item.CreatedBy}}</span></td>
-                            <td><button type="button" class="btn btn-primary" (click)="removeItem()">Remove</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-         </div>
-    
-    
-    
-        
-       </div>
-    
+          </div>
+          <ngx-datatable class="bootstrap core-bootstrap" [columnMode]="'force'" [rowHeight]="'auto'" [limit]="10"
+         [rows]="moduleOprationService.rows" [count]="moduleOprationService.rows.length">
+            <ngx-datatable-column name="{{'NAME' |translate}}" prop="name">
+              <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+                {{row.name}}
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="{{'MODULEOPERATION.GRID.Updated_Date' | translate}}" prop="Updated_Date">
+              <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+                {{row.Updated_Date}}
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="{{'MODULEOPERATION.GRID.Updated_By'| translate}}" prop=" Updated_By">
+              <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+                {{row. Updated_By}}
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="{{'MODULEOPERATION.GRID.Created_Date'| translate}}" prop="Created_Date">
+              <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+                {{row.Created_Date}}
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="{{'MODULEOPERATION.GRID.Created_By'|translate}}" prop="Created_By">
+                <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+                  {{row.Created_By}}
+                </ng-template>
+              </ngx-datatable-column>
+            <ngx-datatable-column name="{{'MODULEOPERATION.GRID.ACTION' |translate}}" prop="id">
+              <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
+                <a (click)="edit(row)"><i  data-feather="edit"></i></a>  |   <a (click)="delete(row)"><i   data-feather="trash"></i></a>
+                <button (click)="OnUpdate()" class="btn btn-warning float-right"></button> -->
+                 <!-- <swal #SweetAlertConfirmText (open)="delete()"></swal> 
+
+            </ng-template>
+            </ngx-datatable-column>
+          </ngx-datatable>
         </div>
-    
-    </form>
+      </div>
     </div>
+  </div>  -->

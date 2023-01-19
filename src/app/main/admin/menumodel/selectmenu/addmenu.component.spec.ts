@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuselectComponent } from './menuselect.component';
+import { MenuselectComponent } from './addmenu.component';
 
 describe('MenuselectComponent', () => {
   let component: MenuselectComponent;

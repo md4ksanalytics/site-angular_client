@@ -11,9 +11,9 @@ import { MenuserviceService } from 'app/main/admin/menumodel/menuservice/menuser
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-menuselect',
-  templateUrl: './menuselect.component.html',
-  styleUrls: ['./menuselect.component.scss']
+  selector: 'app-addmenu',
+  templateUrl: './addmenu.component.html',
+  styleUrls: ['./addmenu.component.scss']
 })
 export class MenuselectComponent{
   menu:Menu
