@@ -50,8 +50,8 @@ export class HttpCommonService {
   }
 
   getWithoutError(mainUrl: string, url: string): Observable<any> {
-    return this._http.get<any>(environment.apiUrl+ this.urlMap.get(mainUrl)+  url).pipe(
-      map((response: ResponseRet<any>) => response),
+    return this._http.get<any>(environment.apiUrl+this.urlMap.get(mainUrl)+  url).pipe(
+      map((response: ResponseRet<any>) => response.message),
       catchError((err: HttpErrorResponse) => this.handleEmptyError(err))
     );
   }

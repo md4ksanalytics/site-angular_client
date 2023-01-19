@@ -10,6 +10,7 @@ export const environment = {
    apiAuditUrl: 'https://cloud-adaptor.proteantech.in/logs-monitoring-api/audit', 
   apiRegistryUrl: 'https://cloud-adaptor.proteantech.in/logs-monitoring-api/registry', 
   production:true,
+  BASE_URL:null,
   env: 'dev',  
   webApiRedirectURL:'https://cloud-adaptor.proteantech.in/',
   urlOauth2:'https://cloud-adaptor.proteantech.in/auth/realms/Site', 

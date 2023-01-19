@@ -115,20 +115,20 @@
               </div>
               <div class="col-md-12 col-12">
                 <div class="form-group">
-                  <button type="submit" [swal]="SweetAlertSuccess" (click)="onSubmit()" class="btn btn-primary float-right" rippleEffect>Register</button>
+                  <button type="submit" (click)="onSubmit()" class="btn btn-primary float-right" rippleEffect>Register</button>
                  
                   <!-- <button type="button" (click)="onUpdate()" class="btn btn-warning float-right" style="margin-right: 27px;">Update</button> -->
-                  <button type="button" [swal]="SweetAlertSuccess"   (click)="onCancel()" class="btn btn-warning float-right" style="margin-right: 27px;">
+                  <button type="button" (click)="onCancel()" class="btn btn-warning float-right" style="margin-right: 27px;">
                     Cancel
                   </button>  
-                  <swal
+                  <!-- <swal
                   #SweetAlertSuccess
                   title="Good job!"
                   text="You clicked the button!"
                   [swalOptions]="{ confirmButtonClass: 'btn btn-primary ' }"
                   icon="sucess"
                   >
-                  </swal>             
+                  </swal>              -->
                 </div>
               </div>
         
