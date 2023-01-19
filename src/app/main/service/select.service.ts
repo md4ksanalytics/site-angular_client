@@ -29,7 +29,8 @@ export class SelectService {
         .getWithoutError(name, "/select/list")
         .subscribe((list: Array<SelectList>) => {
           this.mapSelect.set(name, list);
-        });
+        }
+      );
     }
   }
 }
