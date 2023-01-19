@@ -1,25 +1,5 @@
-
-
-  export interface User {
-    id:string;
-    name: string;
-    value: string;
-   
-    
-  }
-   export interface ModuleOpration
-   {
-        id:string;
-        name:string;
-        updatedDate:string;
-        updatedBy:string;
-        createdDate:string;
-        createdBy:string;
-   }
-
-  
   export interface Lov {
-    id:string;
+    id:Lov;
     name: string;
     Org_Id: number;
     updatedName: string;

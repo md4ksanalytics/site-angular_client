@@ -1,58 +1,10 @@
-<div class="row"  >
-  <div class="col-md-12 col-sm-12">
-    <div class="card">
-      <div class="card-body">
-        <h3>{{'USER.GRID.TITLE'  | translate}}</h3>
-        <hr>
-        <div class="row">
-          <div class="col-md-3 col-sm-6">
+<div class="row">
+    <div class="col-12 mb-50" >
+        <form routerLink="admin/lovdtl">
+        <button type="button" class="btn btn-relief-primary" (click)="click()">Add Lov</button>
+        </form>
+   </div> 
+</div>
 
-            <button type="button" (click)="add()" class="btn btn-outline-primary" rippleEffect>
-              <span [data-feather]="'plus-circle'" [class]="'mr-25'"></span>Add User</button>
-          </div>
-          <div class="col-md-3 col-sm-6">
-          </div>
-          <div class="col-md-3 col-sm-6">
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <input type="search" placeholder="Search" (keyup)="filterUpdate($event)"
-            class="form-control ml-25"  />
-          </div>
-        </div>
-        <ngx-datatable class="bootstrap core-bootstrap" [columnMode]="'force'" [rowHeight]="'auto'" [limit]="10"
-          [rows]="rows" [count]="rows.length">
-          <ngx-datatable-column name="{{'NAME' |translate}}" prop="name">
-            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
-              {{row.name}}
-            </ng-template>
-          </ngx-datatable-column>
-          <ngx-datatable-column name="{{'ORGID' |translate}}" prop="orgid">
-            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
-              {{row.orgid}}
-            </ng-template>
-          </ngx-datatable-column>
-          <ngx-datatable-column name="{{'UPDATEDBY' |translate}}" prop="updatedby">
-            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
-              {{row.updatedby}}
-            </ng-template>
-          </ngx-datatable-column>
-          <ngx-datatable-column name="{{'CREATEDATE' |translate}}" prop="createddate">
-            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
-              {{row.createddate}}
-            </ng-template>
-          </ngx-datatable-column>
-          <ngx-datatable-column name="{{'CREATEBY' |translate}}" prop="createdby">
-            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
-              {{row.createddby}}
-            </ng-template>
-          </ngx-datatable-column>
-          <ngx-datatable-column name="{{'USER.GRID.ACTION' |translate}}" prop="id">
-            <ng-template let-row="row" ngx-datatable-cell-template let-value="value">
-              <a (click)="edit(row)"><i  data-feather="edit"></i></a>  |   <a (click)="delete(row)"><i   data-feather="trash"></i></a>
-          </ng-template>
-          </ngx-datatable-column>
-        </ngx-datatable>
-      </div>
-    </div>
-  </div>
-</div> 
+
+

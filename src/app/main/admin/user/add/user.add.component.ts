@@ -4,7 +4,6 @@ import { locale as en } from "../i18n/en";
 import { locale as fr } from "../i18n/fr";
 import { locale as de } from "../i18n/de";
 import { locale as pt } from "../i18n/pt";
-
 import {  Router } from '@angular/router';
 
 import {
@@ -15,9 +14,7 @@ import {
 } from "@angular/forms";
 import { SelectService } from "app/main/service/select.service";
 import { UserService } from "../service/user.service";
-import { User } from "../../model/reponse";
-// import { User } from "app/auth/models";
-// import { User } from "../../model/user.model";
+import { User } from "../../model/user.model";
 
 @Component({
   selector: "app-user-add",
@@ -48,7 +45,7 @@ export class UserAddComponent {
     });
   }
 
-  get f(): { [key: string]: AbstractControl } {
+  get f(): {[key: string]: AbstractControl } {
     return this.userForm.controls;
   }
 
@@ -77,4 +74,5 @@ export class UserAddComponent {
   onCancel(): void {
    this._router.navigate(['admin/user'])
   }
+  
 }
